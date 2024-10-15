@@ -27,16 +27,17 @@ def create_record(tablename: str, record: dict, db: Session):
 
 
 def update_record(tablename: str, new_record: dict, db: Session):
-    # Fetch the primary key column from SCD_Entities
-    primary_key_column = db.execute(text("""
-        SELECT Source_Primary_Key_Columns FROM SCD_Entities
+    # Fetch the primary key column and overwrite flag from SCD_Entities
+    entity_info = db.execute(text("""
+        SELECT Source_Primary_Key_Columns, Overwrite_Flag FROM SCD_Entities
         WHERE Source_Table_Name = :tablename
     """), {'tablename': tablename}).fetchone()
 
-    if not primary_key_column:
-        raise HTTPException(status_code=404, detail="Primary key column not found")
+    if not entity_info:
+        raise HTTPException(status_code=404, detail="Entity information not found")
 
-    primary_key_column = primary_key_column[0]
+    primary_key_column, overwrite_flag = entity_info
+    print("entity info",entity_info)
 
     # Fetch the relevant columns from Table_Columns_Metadata
     metadata_columns = db.execute(text("""
@@ -62,6 +63,17 @@ def update_record(tablename: str, new_record: dict, db: Session):
 
     print("target_table_namehduwefw",target_table_name)
     print("target_table_rowfjgrjf",target_table_row)
+    
+    # If Overwrite_Flag is 'Y', truncate the target table and reload from the source table
+    if overwrite_flag == 'Y':
+        db.execute(text(f"TRUNCATE TABLE {target_table_name}"))
+        initial_load_from_source_to_target(tablename, target_table_name, scd_type, db)
+        db.execute(text("""
+            INSERT INTO LoadTracking (table_name, last_load_time, message)
+            VALUES (:table_name, :last_load_time, :message)
+        """), {'table_name': target_table_name, 'last_load_time': datetime.now(), 'message': "overwrite flag set, table reloaded"})
+        db.commit()
+        return {"message": "Target table reloaded successfully due to overwrite flag"}
 
     # Perform initial load from source to target table if target table is empty
     target_table_count = db.execute(text(f"SELECT COUNT(*) FROM {target_table_name}")).scalar()
