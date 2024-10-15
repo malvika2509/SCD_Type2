@@ -3,32 +3,67 @@ from fastapi import HTTPException
 from sqlalchemy import text
 from sqlalchemy.orm import Session
 
-def create_target_table_if_not_exists(target_table_name: str, target_columns: list,scd_type:str, db: Session):
-   # Fetch the primary key and surrogate key columns from SCD_Entities
-   result = db.execute(text("""
-       SELECT Target_Primary_Key_Columns, Target_Surrogate_Key_Column FROM SCD_Entities
-       WHERE Target_Table_Name = :target_table_name
-   """), {'target_table_name': target_table_name}).fetchone()
-   print('Result:', result)
-   if not result:
-       raise HTTPException(status_code=404, detail="Primary key or surrogate key not found in metadata")
-   primary_key_column, surrogate_key_column = result
-   # Construct the CREATE TABLE statement dynamically
-   columns_definition = ", ".join([f"{col} VARCHAR(255)" for col in target_columns if col not in [primary_key_column, surrogate_key_column]])
-   print('Primary Key:', primary_key_column, 'Surrogate Key:', surrogate_key_column)
-   create_table_query = f"""
-   IF OBJECT_ID('{target_table_name}', 'U') IS NULL
-   BEGIN
-       CREATE TABLE {target_table_name} (
-           {surrogate_key_column} INT IDENTITY(1,1) PRIMARY KEY,  -- Surrogate key as primary
-           {primary_key_column} VARCHAR(255),  -- Business key (e.g., CustomerID)
-           {columns_definition}
-       )
-   END
-   """
-   db.execute(text(create_table_query))
-   db.commit()
-   print(f"Target table '{target_table_name}' created successfully.")
+# def create_target_table_if_not_exists(target_table_name: str, target_columns: list,scd_type:str, db: Session):
+#    # Fetch the primary key and surrogate key columns from SCD_Entities
+#    result = db.execute(text("""
+#        SELECT Target_Primary_Key_Columns, Target_Surrogate_Key_Column FROM SCD_Entities
+#        WHERE Target_Table_Name = :target_table_name
+#    """), {'target_table_name': target_table_name}).fetchone()
+#    print('Result:', result)
+#    if not result:
+#        raise HTTPException(status_code=404, detail="Primary key or surrogate key not found in metadata")
+#    primary_key_column, surrogate_key_column = result
+#    # Construct the CREATE TABLE statement dynamically
+#    columns_definition = ", ".join([f"{col} VARCHAR(255)" for col in target_columns if col not in [primary_key_column, surrogate_key_column]])
+#    print('Primary Key:', primary_key_column, 'Surrogate Key:', surrogate_key_column)
+#    print("columns_definition",columns_definition)
+#    create_table_query = f"""
+#    IF OBJECT_ID('{target_table_name}', 'U') IS NULL
+#    BEGIN
+#        CREATE TABLE {target_table_name} (
+#            {surrogate_key_column} INT IDENTITY(1,1) PRIMARY KEY,  -- Surrogate key as primary
+#            {primary_key_column} VARCHAR(255),  -- Business key (e.g., CustomerID)
+#            {columns_definition}
+#        )
+#    END
+#    """
+#    db.execute(text(create_table_query))
+#    db.commit()
+#    print(f"Target table '{target_table_name}' created successfully.")
+def create_target_table_if_not_exists(target_table_name: str, target_columns: list, scd_type: str, db: Session):
+    # Fetch the primary key and surrogate key columns from SCD_Entities
+    result = db.execute(text("""
+        SELECT Target_Primary_Key_Columns, Target_Surrogate_Key_Column FROM SCD_Entities
+        WHERE Target_Table_Name = :target_table_name
+    """), {'target_table_name': target_table_name}).fetchone()
+    
+    if not result:
+        raise HTTPException(status_code=404, detail="Primary key or surrogate key not found in metadata")
+    
+    primary_key_column, surrogate_key_column = result
+    
+    # Construct the CREATE TABLE statement dynamically
+    columns_definition = ", ".join([f"{col} VARCHAR(255)" for col in target_columns if col not in [primary_key_column, surrogate_key_column, 'StartDate', 'EndDate', 'IsCurrent', 'UpdatedOn']])
+    
+    if scd_type == 'Type 2':
+        # Add SCD Type 2 specific columns
+        columns_definition += ", StartDate DATETIME, EndDate DATETIME, IsCurrent BIT"
+    
+    create_table_query = f"""
+    IF OBJECT_ID('{target_table_name}', 'U') IS NULL
+    BEGIN
+        CREATE TABLE {target_table_name} (
+            {surrogate_key_column} INT IDENTITY(1,1) PRIMARY KEY,  -- Surrogate key as primary
+            {primary_key_column} VARCHAR(255),  -- Business key (e.g., CustomerID)
+            {columns_definition},
+            UpdatedOn DATETIME
+        )
+    END
+    """
+    
+    db.execute(text(create_table_query))
+    db.commit()
+    print(f"Target table '{target_table_name}' created successfully.")
 
 
 def initial_load_from_source_to_target(source_table: str, target_table: str, scd_type: str, db: Session):
@@ -95,11 +130,4 @@ def initial_load_from_source_to_target(source_table: str, target_table: str, scd
        except Exception as e:
            print(f"Error executing query: {e}")
    db.commit()
-   print(f"Initial load from {source_table} to {target_table} completed successfully.")
-
-   # Update the last load timestamp
-   db.execute(text("""INSERT INTO LoadTracking (TableName, LastLoadTimestamp) VALUES (:table_name, :last_load_timestamp)ON """), {'table_name': target_table, 'last_load_timestamp': datetime.now()})
-
-   db.commit()
-   
    print(f"Initial load from {source_table} to {target_table} completed successfully.")
