@@ -96,22 +96,31 @@ def update_record(tablename: str, new_record: dict, db: Session):
         SELECT * FROM {tablename}
         WHERE UpdatedOn > :last_load_time
     """), {'last_load_time': last_load_time}).fetchall()
+    
+    print("new records")
         
     # Insert new records into the target table
     for record in new_records:
         record = dict(record._mapping)
-        new_row = {col: record.get(col, None) for col in target_columns}
+        # print("record",record)
+        new_row = {col: record.get(col, None) for col in target_columns if col not in['StartDate','EndDate','UpdatedOn','IsCurrent']}
         new_row[primary_key_column] = record[primary_key_column]
-        new_row['StartDate'] = datetime.now()
-        new_row['EndDate'] = None
         new_row['UpdatedOn'] = datetime.now()
-        new_row['IsCurrent'] = 1
+        
+        # print("new_row",new_row)
+        
+        if scd_type == 'Type 2':
+            new_row['StartDate'] = datetime.now()
+            new_row['EndDate'] = None
+            new_row['IsCurrent'] = 1
         
         columns = ', '.join(new_row.keys())
         values = ', '.join([f":{col}" for col in new_row.keys()])
         db.execute(text(f"""
             INSERT INTO {target_table_name} ({columns}) VALUES ({values})
         """), new_row)
+        
+        # print("inserted")
         
         db.commit()
     db.execute(text("""
@@ -125,17 +134,25 @@ def update_record(tablename: str, new_record: dict, db: Session):
     existing_record = db.execute(text(f"""
         SELECT TOP 1 * FROM {target_table_name} WHERE {primary_key_column} = :{primary_key_column} ORDER BY UpdatedOn DESC
     """), {primary_key_column: new_record[primary_key_column]}).fetchone()
+    
+    print("existing_record",existing_record)
 
     if scd_type == 'Type 1':
         # SCD Type 1: Overwrite the record
         if existing_record:
             existing_record = dict(existing_record._mapping)
+            print("existing_record_tye1",existing_record)
+            print("new_record_type1",new_record)
             # Detect changes
+            # Detect changes
+            filtered_new_record = {col: new_record[col] for col in target_columns if col in new_record}
+            print("filtered_new_record",filtered_new_record)
             changes_detected = any(
-                existing_record[column] != new_record.get(column, existing_record[column])
-                for column in target_columns
+                str(existing_record[column]) != str(filtered_new_record.get(column, existing_record[column]))
+                for column in target_columns if column not in ['StartDate', 'EndDate', 'UpdatedOn', 'IsCurrent']
             )
-            
+
+            print("changes_detected", changes_detected)
             if changes_detected:
                 # Prepare update query
                 update_columns = ', '.join([f"{col} = :{col}" for col in target_columns if col not in['StartDate','EndDate','UpdatedOn','IsCurrent']])
@@ -158,7 +175,8 @@ def update_record(tablename: str, new_record: dict, db: Session):
                 return {"message": "No changes detected (SCD Type 1)"}
         else:
             # Insert new record directly
-            new_row = {col: new_record.get(col, None) for col in target_columns}
+            new_row = {col: new_record.get(col, None) for col in target_columns if col not in['StartDate','EndDate','UpdatedOn','IsCurrent']}
+            print("new_row",new_row)
             new_row[primary_key_column] = new_record[primary_key_column]
             new_row['UpdatedOn'] = datetime.now()
             columns = ', '.join(new_row.keys())
