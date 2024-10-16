@@ -160,7 +160,7 @@ def update_record(tablename: str, new_record: dict, db: Session):
             filtered_new_record = {col: new_record[col] for col in target_columns if col in new_record}
             print("filtered_new_record",filtered_new_record)
             changes_detected = any(
-                str(existing_record[column]) != str(filtered_new_record.get(column, existing_record[column]))
+                existing_record[column]!= filtered_new_record.get(column, existing_record[column])
                 for column in target_columns if column not in ['StartDate', 'EndDate', 'UpdatedOn', 'IsCurrent']
             )
 
