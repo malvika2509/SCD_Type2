@@ -3,6 +3,57 @@ from fastapi import Depends, HTTPException
 from .database import get_db
 from sqlalchemy import text
 from sqlalchemy.orm import Session
+from .logger import logger
+
+##################################################
+import random
+
+def log_fail(whatfailed, reason, tablename):
+    logger.info('Failure log', extra={
+        'username': 'malvika',
+        'log_id': random.randint(1000, 9999),
+        'values': {
+            'whatfailed': whatfailed,
+            'reason': reason,
+            'iserrorlog': 1,
+            'table': tablename
+        }
+    })
+
+def log_incrementalloading(tablename, count):
+    logger.info('Incremental loading log', extra={
+        'username': 'malvika',
+        'log_id': random.randint(1000, 9999),
+        'values': {
+            'iserrorlog': 0,
+            'table': tablename,
+            'count': count
+        }
+    })
+
+def log_update(tablename, scd_type):
+    logger.info('Update log', extra={
+        'username': 'malvika',
+        'log_id': random.randint(1000, 9999),
+        'values': {
+            'iserrorlog': 0,
+            'table': tablename,
+            'scd_type': scd_type
+        }
+    })
+
+def log_overwrite(tablename):
+    logger.info('Overwrite log', extra={
+        'username': 'malvika',
+        'log_id': random.randint(1000, 9999),
+        'values': {
+            'iserrorlog': 0,
+            'table': tablename,
+            'overwrite': 'Y'
+        }
+    })
+
+##################################################
 
 def create_target_table_if_not_exists(target_table_name: str, target_columns: list, scd_type: str, db: Session = Depends(get_db)):
     # Fetch the primary key and surrogate key columns from SCD_Entities
@@ -14,6 +65,7 @@ def create_target_table_if_not_exists(target_table_name: str, target_columns: li
     print("selected PK")
     
     if not result:
+        log_fail('initial load failed','Primary key or surrogate key not found in metadata',target_table_name)
         raise HTTPException(status_code=404, detail="Primary key or surrogate key not found in metadata")
     
     primary_key_column, surrogate_key_column = result
@@ -39,6 +91,7 @@ def create_target_table_if_not_exists(target_table_name: str, target_columns: li
         )
     END
     """
+    log_update(target_table_name,scd_type)
     
     db.execute(text(create_table_query))
     db.commit()
@@ -77,6 +130,7 @@ def initial_load_from_source_to_target(source_table: str, target_table: str, scd
        SELECT {', '.join(valid_columns)} FROM {source_table} WHERE UpdatedOn IS NOT NULL
    """)).fetchall()
 #    print("Source Records:", source_records)
+   log_update(source_table,scd_type)
 
    for record in source_records:
        record_dict = dict(record._mapping)
@@ -105,8 +159,11 @@ def initial_load_from_source_to_target(source_table: str, target_table: str, scd
     #    print(f"SQL Query: {sql_query}")
     #    print(f"Parameters: {record_dict}")
        try:
+           
            db.execute(text(sql_query), record_dict)
        except Exception as e:
+           log_fail("query execution failed",'Column mismatch',target_table)
            print(f"Error executing query: {e}")
    db.commit()
+   log_update(target_table,scd_type)
    print(f"Initial load from {source_table} to {target_table} completed successfully.")

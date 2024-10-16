@@ -5,6 +5,58 @@ from sqlalchemy import text
 from sqlalchemy.orm import Session
 from .database import get_db
 from .utils import create_target_table_if_not_exists, initial_load_from_source_to_target
+from .logger import logger
+
+##################################################
+import random
+
+def log_fail(whatfailed, reason, tablename):
+    logger.info('Failure log', extra={
+        'username': 'malvika',
+        'log_id': random.randint(1000, 9999),
+        'values': {
+            'whatfailed': whatfailed,
+            'reason': reason,
+            'iserrorlog': 1,
+            'table': tablename
+        }
+    })
+
+def log_incrementalloading(tablename, count):
+    logger.info('Incremental loading log', extra={
+        'username': 'malvika',
+        'log_id': random.randint(1000, 9999),
+        'values': {
+            'iserrorlog': 0,
+            'table': tablename,
+            'count': count
+        }
+    })
+
+def log_update(tablename, scd_type):
+    logger.info('Update log', extra={
+        'username': 'malvika',
+        'log_id': random.randint(1000, 9999),
+        'values': {
+            'iserrorlog': 0,
+            'table': tablename,
+            'scd_type': scd_type
+        }
+    })
+
+def log_overwrite(tablename):
+    logger.info('Overwrite log', extra={
+        'username': 'malvika',
+        'log_id': random.randint(1000, 9999),
+        'values': {
+            'iserrorlog': 0,
+            'table': tablename,
+            'overwrite': 'Y'
+        }
+    })
+
+
+##################################################
 
 def create_record(tablename: str, record: dict, db: Session = Depends(get_db)):
    # Fetch the relevant columns from the source table's metadata
@@ -32,10 +84,11 @@ def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db
         SELECT Source_Primary_Key_Columns, Overwrite_Flag FROM SCD_Entities
         WHERE Source_Table_Name = :tablename
     """), {'tablename': tablename}).fetchone()
-
+    
     if not entity_info:
+        log_fail('update_record', 'Entity information not found ', tablename)
         raise HTTPException(status_code=404, detail="Entity information not found")
-
+    
     primary_key_column, overwrite_flag = entity_info
     print("entity info",entity_info)
 
@@ -44,7 +97,7 @@ def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db
         SELECT Column_Name FROM Table_Columns_Metadata
         WHERE Table_Name = :tablename AND Is_Target_Column = 1
     """), {'tablename': tablename}).fetchall()
-
+    
     target_columns = [row[0] for row in metadata_columns]
 
     # Fetch the target table name from SCD_Entities
@@ -54,6 +107,7 @@ def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db
     """), {'tablename': tablename}).fetchone()
 
     if not target_table_row:
+        log_fail('update_record', 'Target table name not found', tablename)
         raise HTTPException(status_code=404, detail="Target table name not found")
 
     target_table_name, scd_type = target_table_row
@@ -72,6 +126,7 @@ def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db
             INSERT INTO LoadTracking (table_name, last_load_time, message)
             VALUES (:table_name, :last_load_time, :message)
         """), {'table_name': target_table_name, 'last_load_time': datetime.now(), 'message': "overwrite flag set, table reloaded"})
+        log_overwrite(tablename)
         db.commit()
         return {"message": "Target table reloaded successfully due to overwrite flag"}
 
@@ -108,7 +163,15 @@ def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db
         SELECT * FROM {tablename}
         WHERE UpdatedOn > :last_load_time
     """), {'last_load_time': last_load_time}).fetchall()
+    # Get the count of new or updated records
+    new_records_count = db.execute(text(f"""
+        SELECT COUNT(*) FROM {tablename}
+        WHERE UpdatedOn > :last_load_time
+    """), {'last_load_time': last_load_time}).scalar()
     
+    print("new_records_count",new_records_count)
+    
+    log_incrementalloading(tablename,new_records_count)
     print("new records")
         
     # Insert new records into the target table
@@ -116,6 +179,7 @@ def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db
         record = dict(record._mapping)
         # print("record",record)
         new_row = {col: record.get(col, None) for col in target_columns if col not in['StartDate','EndDate','UpdatedOn','IsCurrent']}
+        
         new_row[primary_key_column] = record[primary_key_column]
         new_row['UpdatedOn'] = datetime.now()
         
@@ -143,15 +207,19 @@ def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db
     db.commit()
         
     # Fetch the most recent record from the target table
-    existing_record = db.execute(text(f"""
-        SELECT TOP 1 * FROM {target_table_name} WHERE {primary_key_column} = :{primary_key_column} ORDER BY UpdatedOn DESC
-    """), {primary_key_column: new_record[primary_key_column]}).fetchone()
+    try:
+        existing_record = db.execute(text(f"""
+            SELECT TOP 1 * FROM {target_table_name} WHERE {primary_key_column} = :{primary_key_column} ORDER BY UpdatedOn DESC
+        """), {primary_key_column: new_record[primary_key_column]}).fetchone()
+    except KeyError as e:
+        log_fail('update_record', f'Missing primary key column: {str(e)}', tablename)
+        raise HTTPException(status_code=400, detail=f"Missing primary key column: {str(e)}")
     
     print("existing_record",existing_record)
 
     if scd_type == 'Type 1':
         # SCD Type 1: Overwrite the record
-        if existing_record:
+        if existing_record:     
             existing_record = dict(existing_record._mapping)
             print("existing_record_tye1",existing_record)
             print("new_record_type1",new_record)
@@ -182,6 +250,7 @@ def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db
                 """), {'table_name': target_table_name, 'last_load_time': datetime.now(),'message':"request received,change occurred in existing record"})
                 
                 db.commit()
+                log_update(tablename,scd_type)
                 return {"message": "Record updated successfully (SCD Type 1)"}
             else:
                 return {"message": "No changes detected (SCD Type 1)"}
@@ -202,6 +271,7 @@ def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db
                 """), {'table_name': target_table_name, 'last_load_time': datetime.now(),'message':"new record added"})
             
             db.commit()
+            log_update(tablename,scd_type)
             return {"message": "Record created successfully (SCD Type 1)"}
     elif scd_type == 'Type 2':
         # SCD Type 2: Handle versioning by closing old records and inserting a new one
@@ -246,8 +316,10 @@ def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db
                 """), {'table_name': target_table_name, 'last_load_time': datetime.now(),'message':"inserted new changes(SCD 2)"})
                 
                 db.commit()
+                log_update(tablename,scd_type)
                 return {"message": "Record updated successfully (SCD Type 2)"}
             else:
+                
                 return {"message": "No changes detected (SCD Type 2)"}
         else:
             # Insert new record directly
@@ -270,6 +342,7 @@ def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db
                     """), {'table_name': target_table_name, 'last_load_time': datetime.now(),'message':"new record added"})
             
             db.commit()
+            log_update(tablename,scd_type)
             return {"message": "Record created successfully (SCD Type 2)"}
     
 
