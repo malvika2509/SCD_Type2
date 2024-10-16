@@ -3,11 +3,10 @@ import logging
 from fastapi import Depends, HTTPException
 from sqlalchemy import text
 from sqlalchemy.orm import Session
-
 from .database import get_db
 from .utils import create_target_table_if_not_exists, initial_load_from_source_to_target
 
-def create_record(tablename: str, record: dict, db: Session):
+def create_record(tablename: str, record: dict, db: Session = Depends(get_db)):
    # Fetch the relevant columns from the source table's metadata
    source_columns = db.execute(text(f"""
        SELECT COLUMN_NAME, COLUMNPROPERTY(OBJECT_ID(TABLE_NAME), COLUMN_NAME, 'IsIdentity') AS IsIdentity
@@ -26,7 +25,8 @@ def create_record(tablename: str, record: dict, db: Session):
    return {"message": "Record created successfully"}
 
 
-def update_record(tablename: str, new_record: dict, db: Session):
+def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db)):
+    
     # Fetch the primary key column and overwrite flag from SCD_Entities
     entity_info = db.execute(text("""
         SELECT Source_Primary_Key_Columns, Overwrite_Flag FROM SCD_Entities
@@ -249,28 +249,28 @@ def update_record(tablename: str, new_record: dict, db: Session):
                 return {"message": "Record updated successfully (SCD Type 2)"}
             else:
                 return {"message": "No changes detected (SCD Type 2)"}
-    else:
-        # Insert new record directly
-        new_row = {col: new_record.get(col, None) for col in target_columns}
-        new_row[primary_key_column] = new_record[primary_key_column]
-        new_row['StartDate'] = datetime.now()
-        new_row['EndDate'] = None
-        new_row['UpdatedOn'] = datetime.now()
-        new_row['IsCurrent'] = 1
-        columns = ', '.join(new_row.keys())
-        values = ', '.join([f":{col}" for col in new_row.keys()])
-        print("target_table_name",target_table_name)
-        db.execute(text(f"""
-            INSERT INTO {target_table_name} ({columns}) VALUES ({values})
-        """), new_row)
-        
-        db.execute(text("""
-                    INSERT INTO LoadTracking (table_name, last_load_time,message)
-                    VALUES (:table_name, :last_load_time,:message)
-                """), {'table_name': target_table_name, 'last_load_time': datetime.now(),'message':"new record added"})
-        
-        db.commit()
-        return {"message": "Record created successfully (SCD Type 2)"}
+        else:
+            # Insert new record directly
+            new_row = {col: new_record.get(col, None) for col in target_columns}
+            new_row[primary_key_column] = new_record[primary_key_column]
+            new_row['StartDate'] = datetime.now()
+            new_row['EndDate'] = None
+            new_row['UpdatedOn'] = datetime.now()
+            new_row['IsCurrent'] = 1
+            columns = ', '.join(new_row.keys())
+            values = ', '.join([f":{col}" for col in new_row.keys()])
+            print("target_table_name",target_table_name)
+            db.execute(text(f"""
+                INSERT INTO {target_table_name} ({columns}) VALUES ({values})
+            """), new_row)
+            
+            db.execute(text("""
+                        INSERT INTO LoadTracking (table_name, last_load_time,message)
+                        VALUES (:table_name, :last_load_time,:message)
+                    """), {'table_name': target_table_name, 'last_load_time': datetime.now(),'message':"new record added"})
+            
+            db.commit()
+            return {"message": "Record created successfully (SCD Type 2)"}
     
 
         
