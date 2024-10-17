@@ -1,59 +1,10 @@
-from datetime import datetime
 from fastapi import Depends, HTTPException
 from .database import get_db
 from sqlalchemy import text
 from sqlalchemy.orm import Session
-from .logger import logger
+from .logging import log_fail, log_update
 
-##################################################
-import random
 
-def log_fail(whatfailed, reason, tablename):
-    logger.info('Failure log', extra={
-        'username': 'malvika',
-        'log_id': random.randint(1000, 9999),
-        'values': {
-            'whatfailed': whatfailed,
-            'reason': reason,
-            'iserrorlog': 1,
-            'table': tablename
-        }
-    })
-
-def log_incrementalloading(tablename, count):
-    logger.info('Incremental loading log', extra={
-        'username': 'malvika',
-        'log_id': random.randint(1000, 9999),
-        'values': {
-            'iserrorlog': 0,
-            'table': tablename,
-            'count': count
-        }
-    })
-
-def log_update(tablename, scd_type):
-    logger.info('Update log', extra={
-        'username': 'malvika',
-        'log_id': random.randint(1000, 9999),
-        'values': {
-            'iserrorlog': 0,
-            'table': tablename,
-            'scd_type': scd_type
-        }
-    })
-
-def log_overwrite(tablename):
-    logger.info('Overwrite log', extra={
-        'username': 'malvika',
-        'log_id': random.randint(1000, 9999),
-        'values': {
-            'iserrorlog': 0,
-            'table': tablename,
-            'overwrite': 'Y'
-        }
-    })
-
-##################################################
 
 def create_target_table_if_not_exists(target_table_name: str, target_columns: list, scd_type: str, db: Session = Depends(get_db)):
     # Fetch the primary key and surrogate key columns from SCD_Entities

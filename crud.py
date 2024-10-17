@@ -1,62 +1,12 @@
 from datetime import datetime
-import logging
 from fastapi import Depends, HTTPException
 from sqlalchemy import text
 from sqlalchemy.orm import Session
+from .helper import fetch_entity_info,fetch_existing_record,fetch_metadata_columns,fetch_last_load_time,fetch_new_records,fetch_new_records_count,fetch_target_table_info
 from .database import get_db
 from .utils import create_target_table_if_not_exists, initial_load_from_source_to_target
 from .logger import logger
-
-##################################################
-import random
-
-def log_fail(whatfailed, reason, tablename):
-    logger.info('Failure log', extra={
-        'username': 'malvika',
-        'log_id': random.randint(1000, 9999),
-        'values': {
-            'whatfailed': whatfailed,
-            'reason': reason,
-            'iserrorlog': 1,
-            'table': tablename
-        }
-    })
-
-def log_incrementalloading(tablename, count):
-    logger.info('Incremental loading log', extra={
-        'username': 'malvika',
-        'log_id': random.randint(1000, 9999),
-        'values': {
-            'iserrorlog': 0,
-            'table': tablename,
-            'count': count
-        }
-    })
-
-def log_update(tablename, scd_type):
-    logger.info('Update log', extra={
-        'username': 'malvika',
-        'log_id': random.randint(1000, 9999),
-        'values': {
-            'iserrorlog': 0,
-            'table': tablename,
-            'scd_type': scd_type
-        }
-    })
-
-def log_overwrite(tablename):
-    logger.info('Overwrite log', extra={
-        'username': 'malvika',
-        'log_id': random.randint(1000, 9999),
-        'values': {
-            'iserrorlog': 0,
-            'table': tablename,
-            'overwrite': 'Y'
-        }
-    })
-
-
-##################################################
+from .logging import log_fail, log_incrementalloading, log_update, log_overwrite
 
 def create_record(tablename: str, record: dict, db: Session = Depends(get_db)):
    # Fetch the relevant columns from the source table's metadata
@@ -80,10 +30,7 @@ def create_record(tablename: str, record: dict, db: Session = Depends(get_db)):
 def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db)):
     
     # Fetch the primary key column and overwrite flag from SCD_Entities
-    entity_info = db.execute(text("""
-        SELECT Source_Primary_Key_Columns, Overwrite_Flag FROM SCD_Entities
-        WHERE Source_Table_Name = :tablename
-    """), {'tablename': tablename}).fetchone()
+    entity_info = fetch_entity_info(tablename, db)
     
     if not entity_info:
         log_fail('update_record', 'Entity information not found ', tablename)
@@ -93,18 +40,12 @@ def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db
     print("entity info",entity_info)
 
     # Fetch the relevant columns from Table_Columns_Metadata
-    metadata_columns = db.execute(text("""
-        SELECT Column_Name FROM Table_Columns_Metadata
-        WHERE Table_Name = :tablename AND Is_Target_Column = 1
-    """), {'tablename': tablename}).fetchall()
+    metadata_columns = fetch_metadata_columns(tablename, db)
     
     target_columns = [row[0] for row in metadata_columns]
 
     # Fetch the target table name from SCD_Entities
-    target_table_row = db.execute(text("""
-        SELECT Target_Table_Name, SCD_Type FROM SCD_Entities
-        WHERE Source_Table_Name = :tablename
-    """), {'tablename': tablename}).fetchone()
+    target_table_row = fetch_target_table_info(tablename, db)
 
     if not target_table_row:
         log_fail('update_record', 'Target table name not found', tablename)
@@ -146,10 +87,7 @@ def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db
         db.commit()
         
     # Fetch the last load time from LoadTracking
-    last_load_time = db.execute(text("""
-        SELECT last_load_time FROM LoadTracking
-        WHERE table_name = :table_name
-    """), {'table_name': target_table_name}).fetchone()
+    last_load_time = fetch_last_load_time(target_table_name, db)
 
     if not last_load_time:
         raise HTTPException(status_code=404, detail="Last load time not found")
@@ -159,15 +97,9 @@ def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db
     last_load_time = last_load_time[0]
     
     # Fetch new or updated records from the source table since the last load time
-    new_records = db.execute(text(f"""
-        SELECT * FROM {tablename}
-        WHERE UpdatedOn > :last_load_time
-    """), {'last_load_time': last_load_time}).fetchall()
+    new_records = fetch_new_records(tablename, last_load_time, db)
+    new_records_count = fetch_new_records_count(tablename, last_load_time, db)
     # Get the count of new or updated records
-    new_records_count = db.execute(text(f"""
-        SELECT COUNT(*) FROM {tablename}
-        WHERE UpdatedOn > :last_load_time
-    """), {'last_load_time': last_load_time}).scalar()
     
     print("new_records_count",new_records_count)
     
@@ -208,9 +140,7 @@ def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db
         
     # Fetch the most recent record from the target table
     try:
-        existing_record = db.execute(text(f"""
-            SELECT TOP 1 * FROM {target_table_name} WHERE {primary_key_column} = :{primary_key_column} ORDER BY UpdatedOn DESC
-        """), {primary_key_column: new_record[primary_key_column]}).fetchone()
+        existing_record = fetch_existing_record(target_table_name, primary_key_column, new_record[primary_key_column], db)
     except KeyError as e:
         log_fail('update_record', f'Missing primary key column: {str(e)}', tablename)
         raise HTTPException(status_code=400, detail=f"Missing primary key column: {str(e)}")
