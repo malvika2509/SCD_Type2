@@ -1,12 +1,12 @@
 from fastapi import Depends, HTTPException
-from .database import get_db
+from database import get_db
 from sqlalchemy import text
 from sqlalchemy.orm import Session
-from .logging import log_fail, log_update
+from logging_anurag import log_fail, log_update
 
 
 
-def create_target_table_if_not_exists(target_table_name: str, target_columns: list, scd_type: str, db: Session = Depends(get_db)):
+def create_target_table_if_not_exists(target_table_name: str, target_columns: list, scd_type: str, db: Session):
     # Fetch the primary key and surrogate key columns from SCD_Entities
     result = db.execute(text("""
         SELECT Target_Primary_Key_Columns, Target_Surrogate_Key_Column FROM SCD_Entities
@@ -49,72 +49,72 @@ def create_target_table_if_not_exists(target_table_name: str, target_columns: li
     print(f"Target table '{target_table_name}' created successfully.")
 
 
-def initial_load_from_source_to_target(source_table: str, target_table: str, scd_type: str, db: Session = Depends(get_db)):
-   # Fetch the relevant columns from Table_Columns_Metadata
-   metadata_columns = db.execute(text("""
-       SELECT Column_Name FROM Table_Columns_Metadata
-       WHERE Table_Name = :source_table AND Is_Target_Column = 1
-   """), {'source_table': source_table}).fetchall()
+def initial_load_from_source_to_target(source_table: str, target_table: str, scd_type: str, db: Session):
+    # Fetch the relevant columns from Table_Columns_Metadata
+    metadata_columns = db.execute(text("""
+        SELECT Column_Name FROM Table_Columns_Metadata
+        WHERE Table_Name = :source_table AND Is_Target_Column = 1
+    """), {'source_table': source_table}).fetchall()
 
-   print("Metadata Columns:", metadata_columns)
+    print("Metadata Columns:", metadata_columns)
 
-   # Extract column names from tuples
-   target_columns = [row[0] for row in metadata_columns]
-   print("Target Columns:", target_columns)
+    # Extract column names from tuples
+    target_columns = [row[0] for row in metadata_columns]
+    print("Target Columns:", target_columns)
 
-   # Fetch column names from the source table's metadata
-   source_columns_query = text(f"""
-       SELECT COLUMN_NAME
-       FROM INFORMATION_SCHEMA.COLUMNS
-       WHERE TABLE_NAME = :source_table
-   """)
-   source_columns_result = db.execute(source_columns_query, {'source_table': source_table}).fetchall()
-   source_columns = [row[0] for row in source_columns_result]
-   print("Source Columns:", source_columns)
+    # Fetch column names from the source table's metadata
+    source_columns_query = text(f"""
+        SELECT COLUMN_NAME
+        FROM INFORMATION_SCHEMA.COLUMNS
+        WHERE TABLE_NAME = :source_table
+    """)
+    source_columns_result = db.execute(source_columns_query, {'source_table': source_table}).fetchall()
+    source_columns = [row[0] for row in source_columns_result]
+    print("Source Columns:", source_columns)
 
-   # Filter target columns to include only those present in the source table
-   valid_columns = [col for col in target_columns if col in source_columns]
-   print("Valid Columns:", valid_columns)
+    # Filter target columns to include only those present in the source table
+    valid_columns = [col for col in target_columns if col in source_columns]
+    print("Valid Columns:", valid_columns)
 
-   # Fetch records from the source table
-   source_records = db.execute(text(f"""
-       SELECT {', '.join(valid_columns)} FROM {source_table} WHERE UpdatedOn IS NOT NULL
-   """)).fetchall()
-#    print("Source Records:", source_records)
-   log_update(source_table,scd_type)
+    # Fetch records from the source table
+    source_records = db.execute(text(f"""
+        SELECT {', '.join(valid_columns)} FROM {source_table}
+    """)).fetchall()
+    print("source_records")
+    #    print("Source Records:", source_records)
+    log_update(source_table,scd_type)
 
-   for record in source_records:
-       record_dict = dict(record._mapping)
-       if scd_type == 'Type 2':
-           # Set StartDate, EndDate, and IsCurrent for SCD Type 2
-           record_dict['StartDate'] = record_dict.get('UpdatedOn')
-           record_dict['EndDate'] = None  # Default value for new records
-           record_dict['IsCurrent'] = 1    # Mark the new record as current
+    for record in source_records:
+        record_dict = dict(record._mapping)
+        if scd_type == 'Type 2':
+            # Set StartDate, EndDate, and IsCurrent for SCD Type 2
+            record_dict['StartDate'] = record_dict.get('UpdatedOn')
+            record_dict['EndDate'] = None  # Default value for new records
+            record_dict['IsCurrent'] = 1    # Mark the new record as current
 
-       else:  
-           # Handle other SCD types as needed
-           # Remove date and current indicators if needed (for Type 1)
+        else:  
+            # Handle other SCD types as needed
+            # Remove date and current indicators if needed (for Type 1)
 
-           record_dict.pop('StartDate', None)
-           record_dict.pop('EndDate', None)
-           record_dict.pop('IsCurrent', None)
+            record_dict.pop('StartDate', None)
+            record_dict.pop('EndDate', None)
+            record_dict.pop('IsCurrent', None)
 
-    #    print("Record Dictionary:", record_dict)
-       columns = ', '.join(record_dict.keys())
-       values = ', '.join([f":{col}" for col in record_dict.keys()])
-       # Prepare the SQL query
-       sql_query = f"""
-           INSERT INTO {target_table} ({columns})
-           VALUES ({values})
-       """
-    #    print(f"SQL Query: {sql_query}")
-    #    print(f"Parameters: {record_dict}")
-       try:
-           
-           db.execute(text(sql_query), record_dict)
-       except Exception as e:
-           log_fail("query execution failed",'Column mismatch',target_table)
-           print(f"Error executing query: {e}")
-   db.commit()
-   log_update(target_table,scd_type)
-   print(f"Initial load from {source_table} to {target_table} completed successfully.")
+        # Check for existing record before inserting
+        columns = ', '.join(record_dict.keys())
+        print("columns---",columns)
+        values = ', '.join([f":{col}" for col in record_dict.keys()])
+        print("values---",values)
+        
+        sql_query = f"""INSERT INTO {target_table} ({columns})VALUES ({values})"""
+        print("sql_query------",sql_query)
+
+        try:
+            print("sql_query")
+            db.execute(text(sql_query), record_dict)
+        except Exception as e:
+            log_fail("query execution failed",'Column mismatch',target_table)
+            print(f"Error executing query: {e}")
+    db.commit()
+    log_update(target_table,scd_type)
+    print(f"Initial load from {source_table} to {target_table} completed successfully.")

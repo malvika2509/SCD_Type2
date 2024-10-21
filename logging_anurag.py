@@ -1,6 +1,6 @@
 import logging
 import random
-from .logger import logger
+from logger import logger
 
 def log_fail(whatfailed, reason, tablename):
     logger.info('Failure log', extra={

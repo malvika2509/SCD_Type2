@@ -1,10 +1,8 @@
-import asyncio
+from time import sleep
 from faker import Faker
-from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
-from sqlalchemy.orm import sessionmaker
 from datetime import datetime
-from .database import get_db, SessionLocal_1
-from .model import DimCustomer, DimProduct, DimRegion
+from database import SessionLocal_1
+from model import DimCustomer, DimProduct, DimRegion
 
 fake = Faker()
 
@@ -52,12 +50,14 @@ def insert_data(session, data, table):
     session.commit()
 
 # Produce data asynchronously
-async def produce_data():
+def produce_data():
     while True:
+        print("syncing faker data")
+        
         customer_data, product_data, region_data = generate_data()
         # Use synchronous session in an asynchronous function
         with SessionLocal_1() as session:
             insert_data(session, customer_data, 'customer_data')
             insert_data(session, product_data, 'product_data')
             insert_data(session, region_data, 'region_data')
-        await asyncio.sleep(5)  # Wait 5 seconds before producing new data
+        sleep(12)  # Wait 5 seconds before producing new data

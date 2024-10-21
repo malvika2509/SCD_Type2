@@ -1,14 +1,14 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 from fastapi import Depends, HTTPException
 from sqlalchemy import text
 from sqlalchemy.orm import Session
-from .helper import fetch_entity_info,fetch_existing_record,fetch_metadata_columns,fetch_last_load_time,fetch_new_records,fetch_new_records_count,fetch_target_table_info
-from .database import get_db
-from .utils import create_target_table_if_not_exists, initial_load_from_source_to_target
-from .logger import logger
-from .logging import log_fail, log_incrementalloading, log_update, log_overwrite
+from helper import fetch_entity_info,fetch_existing_record,fetch_metadata_columns,fetch_last_load_time,fetch_new_records,fetch_new_records_count,fetch_target_table_info
+from database import get_db
+from utils import create_target_table_if_not_exists, initial_load_from_source_to_target
+from logger import logger
+from logging_anurag import log_fail, log_incrementalloading, log_update, log_overwrite
 
-def create_record(tablename: str, record: dict, db: Session = Depends(get_db)):
+def create_record(tablename: str, record: dict, db: Session):
    # Fetch the relevant columns from the source table's metadata
    source_columns = db.execute(text(f"""
        SELECT COLUMN_NAME, COLUMNPROPERTY(OBJECT_ID(TABLE_NAME), COLUMN_NAME, 'IsIdentity') AS IsIdentity
@@ -27,7 +27,7 @@ def create_record(tablename: str, record: dict, db: Session = Depends(get_db)):
    return {"message": "Record created successfully"}
 
 
-def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db)):
+def update_record(tablename: str, new_record: dict, db: Session):
     
     # Fetch the primary key column and overwrite flag from SCD_Entities
     entity_info = fetch_entity_info(tablename, db)
@@ -66,7 +66,7 @@ def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db
         db.execute(text("""
             INSERT INTO LoadTracking (table_name, last_load_time, message)
             VALUES (:table_name, :last_load_time, :message)
-        """), {'table_name': target_table_name, 'last_load_time': datetime.now(), 'message': "overwrite flag set, table reloaded"})
+        """), {'table_name': target_table_name, 'last_load_time': datetime.now() +timedelta(seconds=1), 'message': "overwrite flag set, table reloaded"})
         log_overwrite(tablename)
         db.commit()
         return {"message": "Target table reloaded successfully due to overwrite flag"}
@@ -97,9 +97,10 @@ def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db
     last_load_time = last_load_time[0]
     
     # Fetch new or updated records from the source table since the last load time
-    new_records = fetch_new_records(tablename, last_load_time, db)
+    new_records = fetch_new_records(tablename,target_table_name,primary_key_column, last_load_time, db)
     new_records_count = fetch_new_records_count(tablename, last_load_time, db)
     # Get the count of new or updated records
+  
     
     print("new_records_count",new_records_count)
     
@@ -109,13 +110,10 @@ def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db
     # Insert new records into the target table
     for record in new_records:
         record = dict(record._mapping)
-        # print("record",record)
-        new_row = {col: record.get(col, None) for col in target_columns if col not in['StartDate','EndDate','UpdatedOn','IsCurrent']}
+        new_row = {col: record.get(col, None) for col in target_columns if col not in ['StartDate', 'EndDate', 'UpdatedOn', 'IsCurrent']}
         
         new_row[primary_key_column] = record[primary_key_column]
         new_row['UpdatedOn'] = datetime.now()
-        
-        # print("new_row",new_row)
         
         if scd_type == 'Type 2':
             new_row['StartDate'] = datetime.now()
@@ -124,17 +122,25 @@ def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db
         
         columns = ', '.join(new_row.keys())
         values = ', '.join([f":{col}" for col in new_row.keys()])
-        db.execute(text(f"""
-            INSERT INTO {target_table_name} ({columns}) VALUES ({values})
-        """), new_row)
         
+        # Check for duplicates
+        existing_record = db.execute(text(f"""
+            SELECT 1
+            FROM {target_table_name}
+            WHERE {primary_key_column} = :primary_key_value
+        """), {'primary_key_value': record[primary_key_column]}).fetchone()
+        
+        if not existing_record:
+            db.execute(text(f"""
+                INSERT INTO {target_table_name} ({columns}) VALUES ({values})
+            """), new_row)
         # print("inserted")
         
         db.commit()
     db.execute(text("""
             INSERT INTO LoadTracking (table_name, last_load_time,message)
             VALUES (:table_name, :last_load_time,:message)
-        """), {'table_name': target_table_name, 'last_load_time': datetime.now(),'message':"compared to source,data inserted"})
+        """), {'table_name': target_table_name, 'last_load_time': datetime.now() +timedelta(seconds=1),'message':"compared to source,data inserted"})
         
     db.commit()
         
@@ -198,7 +204,7 @@ def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db
             db.execute(text("""
                     INSERT INTO LoadTracking (table_name, last_load_time,message)
                     VALUES (:table_name, :last_load_time,:message)
-                """), {'table_name': target_table_name, 'last_load_time': datetime.now(),'message':"new record added"})
+                """), {'table_name': target_table_name, 'last_load_time': datetime.now()+timedelta(seconds=1),'message':"new record added"})
             
             db.commit()
             log_update(tablename,scd_type)
@@ -222,7 +228,7 @@ def update_record(tablename: str, new_record: dict, db: Session = Depends(get_db
                 db.execute(text("""
                     INSERT INTO LoadTracking (table_name, last_load_time,message)
                     VALUES (:table_name, :last_load_time,:message)
-                """), {'table_name': target_table_name, 'last_load_time': datetime.now(),'message':"made record inactive"})
+                """), {'table_name': target_table_name, 'last_load_time': datetime.now()+timedelta(seconds=1),'message':"made record inactive"})
                 
                 # Insert new record
                 new_row = {col: new_record.get(col, existing_record[col]) for col in target_columns}

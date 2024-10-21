@@ -158,3 +158,534 @@
 {"Username": "malvika", "Log_id": 9313, "Timestamp": "2024-10-17T07:27:44.205594+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "unknown"}}
 {"Username": "malvika", "Log_id": 5630, "Timestamp": "2024-10-17T07:27:55.186884+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "unknown"}}
 {"Username": "malvika", "Log_id": 8030, "Timestamp": "2024-10-17T07:28:50.997115+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "unknown"}}
+{"Username": "malvika", "Log_id": 4921, "Timestamp": "2024-10-17T08:06:33.381669+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4847, "Timestamp": "2024-10-17T08:06:33.482467+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 4964}}
+{"Username": "malvika", "Log_id": 9147, "Timestamp": "2024-10-17T08:07:07.769832+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3202, "Timestamp": "2024-10-17T08:07:15.021771+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 4972}}
+{"Username": "malvika", "Log_id": 6251, "Timestamp": "2024-10-17T08:13:56.669185+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8919, "Timestamp": "2024-10-17T08:18:16.247603+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 5053}}
+{"Username": "malvika", "Log_id": 9121, "Timestamp": "2024-10-17T08:24:33.721821+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3310, "Timestamp": "2024-10-17T08:38:07.126478+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7224, "Timestamp": "2024-10-17T08:41:43.281292+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8409, "Timestamp": "2024-10-17T08:42:13.932643+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 4016, "Timestamp": "2024-10-17T08:48:11.972512+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5049, "Timestamp": "2024-10-17T08:51:48.138811+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 7113, "Timestamp": "2024-10-17T08:52:39.800885+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8308, "Timestamp": "2024-10-17T08:53:18.197676+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 4897, "Timestamp": "2024-10-17T08:56:08.314559+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6650, "Timestamp": "2024-10-17T08:56:08.502130+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7234, "Timestamp": "2024-10-17T08:56:27.770493+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4188, "Timestamp": "2024-10-17T08:56:27.932135+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 5197}}
+{"Username": "malvika", "Log_id": 6331, "Timestamp": "2024-10-17T08:56:43.074402+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4017, "Timestamp": "2024-10-17T09:02:29.281258+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2009, "Timestamp": "2024-10-17T09:02:29.484428+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2477, "Timestamp": "2024-10-17T09:02:47.543773+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7771, "Timestamp": "2024-10-17T09:02:47.627984+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 5200}}
+{"Username": "malvika", "Log_id": 1510, "Timestamp": "2024-10-17T09:03:02.340238+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 9704, "Timestamp": "2024-10-17T09:07:53.833750+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8673, "Timestamp": "2024-10-17T09:07:54.031371+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3057, "Timestamp": "2024-10-17T09:08:11.314622+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8425, "Timestamp": "2024-10-17T09:08:11.398032+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 5203}}
+{"Username": "malvika", "Log_id": 1562, "Timestamp": "2024-10-17T09:08:26.216801+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 9395, "Timestamp": "2024-10-17T10:33:50.522313+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 9803, "Timestamp": "2024-10-17T10:33:50.604806+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 2}}
+{"Username": "malvika", "Log_id": 6431, "Timestamp": "2024-10-17T10:34:27.213194+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4709, "Timestamp": "2024-10-17T10:34:27.369765+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6467, "Timestamp": "2024-10-17T10:34:27.423738+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1346, "Timestamp": "2024-10-17T10:34:27.440737+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 2}}
+{"Username": "malvika", "Log_id": 9704, "Timestamp": "2024-10-17T10:34:27.478737+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7481, "Timestamp": "2024-10-17T10:34:36.350639+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 9141, "Timestamp": "2024-10-17T10:34:36.368634+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 2}}
+{"Username": "malvika", "Log_id": 5566, "Timestamp": "2024-10-17T10:37:04.476944+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3640, "Timestamp": "2024-10-17T10:37:04.507944+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 4}}
+{"Username": "malvika", "Log_id": 8886, "Timestamp": "2024-10-17T10:40:24.064971+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1183, "Timestamp": "2024-10-17T10:40:24.098892+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 5}}
+{"Username": "malvika", "Log_id": 6294, "Timestamp": "2024-10-17T10:42:47.307005+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8595, "Timestamp": "2024-10-17T10:42:47.420607+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8623, "Timestamp": "2024-10-17T10:42:47.528607+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6590, "Timestamp": "2024-10-17T10:42:47.546699+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 7}}
+{"Username": "malvika", "Log_id": 1141, "Timestamp": "2024-10-17T10:42:47.625056+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4415, "Timestamp": "2024-10-17T10:50:09.673205+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6343, "Timestamp": "2024-10-17T10:50:09.824949+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7166, "Timestamp": "2024-10-17T10:50:09.917191+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8723, "Timestamp": "2024-10-17T10:50:09.937751+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 11}}
+{"Username": "malvika", "Log_id": 8283, "Timestamp": "2024-10-17T10:50:10.003752+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4225, "Timestamp": "2024-10-17T10:55:03.032195+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 9215, "Timestamp": "2024-10-17T10:55:03.158955+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3212, "Timestamp": "2024-10-17T10:55:03.283108+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8388, "Timestamp": "2024-10-17T10:55:03.307112+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 13}}
+{"Username": "malvika", "Log_id": 1313, "Timestamp": "2024-10-17T10:55:03.385948+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3093, "Timestamp": "2024-10-17T10:56:16.139362+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1469, "Timestamp": "2024-10-17T10:56:16.202550+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4243, "Timestamp": "2024-10-17T10:56:16.355548+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6348, "Timestamp": "2024-10-17T10:56:16.376152+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 4525, "Timestamp": "2024-10-17T10:56:16.398771+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6473, "Timestamp": "2024-10-17T10:56:57.998832+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4055, "Timestamp": "2024-10-17T10:56:58.028835+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 5813, "Timestamp": "2024-10-17T10:57:25.657069+00:00", "Values": {"whatfailed": "update_record", "reason": "Entity information not found ", "iserrorlog": 1, "table": "DimCustmer"}}
+{"Username": "malvika", "Log_id": 4957, "Timestamp": "2024-10-17T10:57:25.665064+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustmer"}}
+{"Username": "malvika", "Log_id": 1261, "Timestamp": "2024-10-17T10:58:58.854895+00:00", "Values": {"whatfailed": "update_record", "reason": "Entity information not found ", "iserrorlog": 1, "table": "DimCustmer"}}
+{"Username": "malvika", "Log_id": 5865, "Timestamp": "2024-10-17T10:58:58.857895+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustmer"}}
+{"Username": "malvika", "Log_id": 8421, "Timestamp": "2024-10-17T10:59:03.075661+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3803, "Timestamp": "2024-10-17T10:59:03.135314+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4961, "Timestamp": "2024-10-17T10:59:03.228770+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 9609, "Timestamp": "2024-10-17T10:59:03.240762+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 9892, "Timestamp": "2024-10-17T10:59:03.263762+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4647, "Timestamp": "2024-10-17T10:59:23.909025+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8216, "Timestamp": "2024-10-17T10:59:23.932795+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 5739, "Timestamp": "2024-10-17T10:59:46.150595+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4389, "Timestamp": "2024-10-17T10:59:46.166594+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 1}}
+{"Username": "malvika", "Log_id": 5791, "Timestamp": "2024-10-17T10:59:46.194631+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4732, "Timestamp": "2024-10-17T11:03:56.162647+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4164, "Timestamp": "2024-10-17T11:03:56.192655+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 3}}
+{"Username": "malvika", "Log_id": 7399, "Timestamp": "2024-10-17T11:05:08.343903+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Product", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 3217, "Timestamp": "2024-10-17T11:05:08.471918+00:00", "Values": {"iserrorlog": 0, "table": "DimProduct", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 1082, "Timestamp": "2024-10-17T11:05:08.473921+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimProduct"}}
+{"Username": "malvika", "Log_id": 7487, "Timestamp": "2024-10-17T11:05:14.147011+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Product", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 3999, "Timestamp": "2024-10-17T11:05:14.224913+00:00", "Values": {"iserrorlog": 0, "table": "DimProduct", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 2970, "Timestamp": "2024-10-17T11:05:14.226804+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimProduct"}}
+{"Username": "malvika", "Log_id": 2877, "Timestamp": "2024-10-17T11:07:40.072633+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Product", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 6018, "Timestamp": "2024-10-17T11:07:40.268543+00:00", "Values": {"iserrorlog": 0, "table": "DimProduct", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 7394, "Timestamp": "2024-10-17T11:07:40.270542+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimProduct"}}
+{"Username": "malvika", "Log_id": 2494, "Timestamp": "2024-10-17T11:08:05.227402+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Product", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 4066, "Timestamp": "2024-10-17T11:08:05.285775+00:00", "Values": {"iserrorlog": 0, "table": "DimProduct", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 8238, "Timestamp": "2024-10-17T11:08:05.287774+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimProduct"}}
+{"Username": "malvika", "Log_id": 1695, "Timestamp": "2024-10-17T11:08:09.103333+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Product", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 8115, "Timestamp": "2024-10-17T11:08:09.153368+00:00", "Values": {"iserrorlog": 0, "table": "DimProduct", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 7207, "Timestamp": "2024-10-17T11:08:09.154331+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimProduct"}}
+{"Username": "malvika", "Log_id": 5846, "Timestamp": "2024-10-17T11:08:09.442783+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Product", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 3534, "Timestamp": "2024-10-17T11:08:09.489678+00:00", "Values": {"iserrorlog": 0, "table": "DimProduct", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 2923, "Timestamp": "2024-10-17T11:08:09.491678+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimProduct"}}
+{"Username": "malvika", "Log_id": 3759, "Timestamp": "2024-10-17T11:08:09.590679+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Product", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 1276, "Timestamp": "2024-10-17T11:08:09.635561+00:00", "Values": {"iserrorlog": 0, "table": "DimProduct", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 4288, "Timestamp": "2024-10-17T11:08:09.637146+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimProduct"}}
+{"Username": "malvika", "Log_id": 1547, "Timestamp": "2024-10-17T11:08:09.722557+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Product", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 3383, "Timestamp": "2024-10-17T11:08:09.741563+00:00", "Values": {"iserrorlog": 0, "table": "DimProduct", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 1200, "Timestamp": "2024-10-17T11:08:09.743561+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimProduct"}}
+{"Username": "malvika", "Log_id": 9393, "Timestamp": "2024-10-17T11:17:36.814555+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Product", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 8887, "Timestamp": "2024-10-17T11:17:36.893608+00:00", "Values": {"iserrorlog": 0, "table": "DimProduct", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 9599, "Timestamp": "2024-10-17T11:17:36.893608+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimProduct"}}
+{"Username": "malvika", "Log_id": 7953, "Timestamp": "2024-10-17T11:20:05.454682+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Product", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 1409, "Timestamp": "2024-10-17T11:20:05.523514+00:00", "Values": {"iserrorlog": 0, "table": "DimProduct", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 7439, "Timestamp": "2024-10-17T11:20:05.619402+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Product", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 3966, "Timestamp": "2024-10-17T11:20:05.658004+00:00", "Values": {"iserrorlog": 0, "table": "DimProduct", "count": 0}}
+{"Username": "malvika", "Log_id": 5136, "Timestamp": "2024-10-17T11:20:05.689557+00:00", "Values": {"iserrorlog": 0, "table": "DimProduct", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 4412, "Timestamp": "2024-10-17T11:20:26.756455+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Product", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 5076, "Timestamp": "2024-10-17T11:20:26.782613+00:00", "Values": {"iserrorlog": 0, "table": "DimProduct", "count": 0}}
+{"Username": "malvika", "Log_id": 6758, "Timestamp": "2024-10-17T11:25:47.772742+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1376, "Timestamp": "2024-10-17T11:25:47.906146+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4532, "Timestamp": "2024-10-17T11:25:47.907973+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3507, "Timestamp": "2024-10-17T11:25:47.922803+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 8294, "Timestamp": "2024-10-17T11:25:47.950696+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6411, "Timestamp": "2024-10-17T11:31:52.877403+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3952, "Timestamp": "2024-10-17T11:31:52.979013+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4774, "Timestamp": "2024-10-17T11:31:52.979013+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3312, "Timestamp": "2024-10-17T11:31:53.004580+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 4456, "Timestamp": "2024-10-17T11:31:53.020285+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2786, "Timestamp": "2024-10-17T11:35:34.606534+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7150, "Timestamp": "2024-10-17T11:35:34.724405+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6529, "Timestamp": "2024-10-17T11:35:34.729188+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1440, "Timestamp": "2024-10-17T11:35:34.744766+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 2444, "Timestamp": "2024-10-17T11:35:34.766062+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7374, "Timestamp": "2024-10-17T11:39:16.133585+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7500, "Timestamp": "2024-10-17T11:39:16.214776+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1644, "Timestamp": "2024-10-17T11:39:16.456546+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8746, "Timestamp": "2024-10-17T11:39:16.468257+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 2334, "Timestamp": "2024-10-17T11:39:16.517828+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8521, "Timestamp": "2024-10-17T11:43:42.284516+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Product", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 4521, "Timestamp": "2024-10-17T11:43:42.431410+00:00", "Values": {"iserrorlog": 0, "table": "DimProduct", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 3984, "Timestamp": "2024-10-17T11:43:42.549007+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Product", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 3920, "Timestamp": "2024-10-17T11:43:42.579476+00:00", "Values": {"iserrorlog": 0, "table": "DimProduct", "count": 0}}
+{"Username": "malvika", "Log_id": 3951, "Timestamp": "2024-10-17T11:43:42.601361+00:00", "Values": {"iserrorlog": 0, "table": "DimProduct", "scd_type": "Type 1"}}
+{"Username": "malvika", "Log_id": 1755, "Timestamp": "2024-10-17T11:47:17.722674+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Region", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7701, "Timestamp": "2024-10-17T11:47:17.822457+00:00", "Values": {"iserrorlog": 0, "table": "DimRegion", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2419, "Timestamp": "2024-10-17T11:47:18.069756+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Region", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1791, "Timestamp": "2024-10-17T11:47:18.080720+00:00", "Values": {"iserrorlog": 0, "table": "DimRegion", "overwrite": "Y"}}
+{"Username": "malvika", "Log_id": 5984, "Timestamp": "2024-10-17T11:47:51.426975+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Region", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2185, "Timestamp": "2024-10-17T11:47:51.512432+00:00", "Values": {"iserrorlog": 0, "table": "DimRegion", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 9272, "Timestamp": "2024-10-17T11:47:51.706478+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Region", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6144, "Timestamp": "2024-10-17T11:47:51.714988+00:00", "Values": {"iserrorlog": 0, "table": "DimRegion", "overwrite": "Y"}}
+{"Username": "malvika", "Log_id": 5885, "Timestamp": "2024-10-17T11:48:36.025705+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Region", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4049, "Timestamp": "2024-10-17T11:48:36.108081+00:00", "Values": {"iserrorlog": 0, "table": "DimRegion", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3357, "Timestamp": "2024-10-17T11:48:36.308498+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Region", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8520, "Timestamp": "2024-10-17T11:48:36.319212+00:00", "Values": {"iserrorlog": 0, "table": "DimRegion", "overwrite": "Y"}}
+{"Username": "malvika", "Log_id": 3236, "Timestamp": "2024-10-17T11:49:22.012743+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Region", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8302, "Timestamp": "2024-10-17T11:49:22.062491+00:00", "Values": {"iserrorlog": 0, "table": "DimRegion", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 9299, "Timestamp": "2024-10-17T11:49:22.249239+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Region", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2723, "Timestamp": "2024-10-17T11:49:22.252881+00:00", "Values": {"iserrorlog": 0, "table": "DimRegion", "overwrite": "Y"}}
+{"Username": "malvika", "Log_id": 7552, "Timestamp": "2024-10-17T11:51:34.435156+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Region", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7911, "Timestamp": "2024-10-17T11:51:34.538679+00:00", "Values": {"iserrorlog": 0, "table": "DimRegion", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3841, "Timestamp": "2024-10-17T11:51:34.729804+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Region", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7150, "Timestamp": "2024-10-17T11:51:34.737874+00:00", "Values": {"iserrorlog": 0, "table": "DimRegion", "overwrite": "Y"}}
+{"Username": "malvika", "Log_id": 6448, "Timestamp": "2024-10-17T11:57:42.036102+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "unknown"}}
+{"Username": "malvika", "Log_id": 2478, "Timestamp": "2024-10-17T11:58:20.116178+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "unknown"}}
+{"Username": "malvika", "Log_id": 9880, "Timestamp": "2024-10-17T11:58:21.158843+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "unknown"}}
+{"Username": "malvika", "Log_id": 4259, "Timestamp": "2024-10-17T11:58:21.788910+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "unknown"}}
+{"Username": "malvika", "Log_id": 8333, "Timestamp": "2024-10-17T11:58:21.935996+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "unknown"}}
+{"Username": "malvika", "Log_id": 6597, "Timestamp": "2024-10-17T11:58:22.090235+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "unknown"}}
+{"Username": "malvika", "Log_id": 4078, "Timestamp": "2024-10-17T11:58:22.237191+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "unknown"}}
+{"Username": "malvika", "Log_id": 5969, "Timestamp": "2024-10-17T11:58:22.450310+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "unknown"}}
+{"Username": "malvika", "Log_id": 7568, "Timestamp": "2024-10-18T07:31:24.313013+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4760, "Timestamp": "2024-10-18T07:31:24.393682+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 19}}
+{"Username": "malvika", "Log_id": 3905, "Timestamp": "2024-10-18T07:36:42.980019+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3620, "Timestamp": "2024-10-18T07:36:43.058802+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 22}}
+{"Username": "malvika", "Log_id": 1791, "Timestamp": "2024-10-18T07:47:46.835131+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1258, "Timestamp": "2024-10-18T07:47:46.997788+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2967, "Timestamp": "2024-10-18T07:47:47.078876+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2054, "Timestamp": "2024-10-18T07:47:47.108753+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 6355, "Timestamp": "2024-10-18T07:47:47.137821+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7569, "Timestamp": "2024-10-18T07:50:11.911684+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4538, "Timestamp": "2024-10-18T07:50:11.944933+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 12}}
+{"Username": "malvika", "Log_id": 6247, "Timestamp": "2024-10-18T07:51:48.754447+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5551, "Timestamp": "2024-10-18T07:51:48.787004+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 20}}
+{"Username": "malvika", "Log_id": 3378, "Timestamp": "2024-10-18T07:51:48.870197+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8482, "Timestamp": "2024-10-18T11:13:30.672183+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8343, "Timestamp": "2024-10-18T11:13:31.111345+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 557}}
+{"Username": "malvika", "Log_id": 6671, "Timestamp": "2024-10-18T11:13:32.779360+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3487, "Timestamp": "2024-10-18T11:14:30.154094+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4618, "Timestamp": "2024-10-18T11:14:30.421917+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 562}}
+{"Username": "malvika", "Log_id": 1977, "Timestamp": "2024-10-18T11:16:07.144416+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1847, "Timestamp": "2024-10-18T11:16:07.741894+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 571}}
+{"Username": "malvika", "Log_id": 1217, "Timestamp": "2024-10-18T11:16:52.620540+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8440, "Timestamp": "2024-10-18T11:16:53.780487+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 574}}
+{"Username": "malvika", "Log_id": 7257, "Timestamp": "2024-10-18T11:17:09.796695+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6431, "Timestamp": "2024-10-18T11:17:13.350832+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 576}}
+{"Username": "malvika", "Log_id": 9508, "Timestamp": "2024-10-18T11:17:29.893821+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4473, "Timestamp": "2024-10-18T11:23:00.019932+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2983, "Timestamp": "2024-10-18T11:23:01.827039+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 601}}
+{"Username": "malvika", "Log_id": 2503, "Timestamp": "2024-10-18T11:23:29.427753+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 9765, "Timestamp": "2024-10-18T11:42:51.648157+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1996, "Timestamp": "2024-10-18T11:42:51.731128+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3179, "Timestamp": "2024-10-18T11:42:51.819917+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3755, "Timestamp": "2024-10-18T11:42:51.836400+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 3139, "Timestamp": "2024-10-18T11:42:51.868008+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 9677, "Timestamp": "2024-10-18T11:45:06.150080+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6750, "Timestamp": "2024-10-18T11:45:06.163645+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 12}}
+{"Username": "malvika", "Log_id": 6363, "Timestamp": "2024-10-18T11:45:06.245049+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6189, "Timestamp": "2024-10-18T11:45:36.712504+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8484, "Timestamp": "2024-10-18T11:45:36.760380+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 14}}
+{"Username": "malvika", "Log_id": 3511, "Timestamp": "2024-10-18T11:45:36.825647+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1400, "Timestamp": "2024-10-18T11:47:42.602536+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2648, "Timestamp": "2024-10-18T11:47:42.620640+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 25}}
+{"Username": "malvika", "Log_id": 8219, "Timestamp": "2024-10-18T11:47:42.679599+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1737, "Timestamp": "2024-10-18T11:48:24.517798+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6677, "Timestamp": "2024-10-18T11:48:24.535741+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 28}}
+{"Username": "malvika", "Log_id": 8227, "Timestamp": "2024-10-18T11:48:25.317929+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8174, "Timestamp": "2024-10-18T11:48:25.348967+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 28}}
+{"Username": "malvika", "Log_id": 7598, "Timestamp": "2024-10-18T11:48:25.894050+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2697, "Timestamp": "2024-10-18T11:48:25.917197+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 28}}
+{"Username": "malvika", "Log_id": 2980, "Timestamp": "2024-10-18T11:51:15.992824+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3859, "Timestamp": "2024-10-18T11:51:16.093556+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6121, "Timestamp": "2024-10-18T11:51:16.168343+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8492, "Timestamp": "2024-10-18T11:51:16.179591+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 2575, "Timestamp": "2024-10-18T11:51:16.206911+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6515, "Timestamp": "2024-10-18T11:52:05.585152+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2909, "Timestamp": "2024-10-18T11:52:05.611111+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 8378, "Timestamp": "2024-10-18T11:52:05.643876+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5737, "Timestamp": "2024-10-18T11:52:20.824739+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6807, "Timestamp": "2024-10-18T11:52:20.844965+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 5089, "Timestamp": "2024-10-18T11:52:20.865781+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3867, "Timestamp": "2024-10-18T11:52:20.986178+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3056, "Timestamp": "2024-10-18T11:52:21.004592+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 5624, "Timestamp": "2024-10-18T11:52:21.106760+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2198, "Timestamp": "2024-10-18T11:52:21.117098+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 2512, "Timestamp": "2024-10-18T11:52:21.231391+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1554, "Timestamp": "2024-10-18T11:52:21.241106+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 8312, "Timestamp": "2024-10-18T11:52:21.383171+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5790, "Timestamp": "2024-10-18T11:52:21.401330+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 4587, "Timestamp": "2024-10-18T11:52:21.516454+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 9482, "Timestamp": "2024-10-18T11:52:21.532018+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 6276, "Timestamp": "2024-10-18T11:52:21.653798+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5374, "Timestamp": "2024-10-18T11:52:21.665862+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 4786, "Timestamp": "2024-10-18T11:52:21.798238+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7885, "Timestamp": "2024-10-18T11:52:21.813864+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 9796, "Timestamp": "2024-10-18T11:52:21.935495+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4580, "Timestamp": "2024-10-18T11:52:21.953065+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 7064, "Timestamp": "2024-10-18T11:52:22.054160+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4185, "Timestamp": "2024-10-18T11:52:22.066475+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 1479, "Timestamp": "2024-10-18T11:52:22.518129+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 9995, "Timestamp": "2024-10-18T11:52:22.532438+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 2966, "Timestamp": "2024-10-18T11:52:22.670873+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1519, "Timestamp": "2024-10-18T11:52:22.682439+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 9840, "Timestamp": "2024-10-18T11:52:22.804818+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2965, "Timestamp": "2024-10-18T11:52:22.817307+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 3425, "Timestamp": "2024-10-18T11:52:22.981652+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7319, "Timestamp": "2024-10-18T11:52:22.998103+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 9782, "Timestamp": "2024-10-18T11:52:23.115752+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3822, "Timestamp": "2024-10-18T11:52:23.116074+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 4850, "Timestamp": "2024-10-18T11:52:23.256163+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4654, "Timestamp": "2024-10-18T11:52:23.271800+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 6890, "Timestamp": "2024-10-18T11:52:27.232719+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6630, "Timestamp": "2024-10-18T11:52:27.256884+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 8893, "Timestamp": "2024-10-18T11:52:27.392009+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2934, "Timestamp": "2024-10-18T11:52:27.407962+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 9145, "Timestamp": "2024-10-18T11:52:27.540662+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7635, "Timestamp": "2024-10-18T11:52:27.559562+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 4508, "Timestamp": "2024-10-18T11:52:27.693165+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1708, "Timestamp": "2024-10-18T11:52:27.708989+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 2963, "Timestamp": "2024-10-18T11:57:56.713811+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3870, "Timestamp": "2024-10-18T11:57:56.766703+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 10}}
+{"Username": "malvika", "Log_id": 7235, "Timestamp": "2024-10-18T11:58:33.372649+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5352, "Timestamp": "2024-10-18T11:58:33.402220+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 13}}
+{"Username": "malvika", "Log_id": 4559, "Timestamp": "2024-10-18T11:58:33.475845+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4024, "Timestamp": "2024-10-18T11:58:48.428825+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5619, "Timestamp": "2024-10-18T11:58:48.491689+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 14}}
+{"Username": "malvika", "Log_id": 6787, "Timestamp": "2024-10-18T11:59:52.262243+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8413, "Timestamp": "2024-10-18T11:59:52.292707+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 19}}
+{"Username": "malvika", "Log_id": 5854, "Timestamp": "2024-10-18T12:00:09.199450+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2729, "Timestamp": "2024-10-18T12:00:09.232379+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 21}}
+{"Username": "malvika", "Log_id": 9771, "Timestamp": "2024-10-18T12:02:40.389479+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4420, "Timestamp": "2024-10-18T12:02:40.418707+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 9232, "Timestamp": "2024-10-18T12:05:38.391115+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6544, "Timestamp": "2024-10-18T12:05:38.490448+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7357, "Timestamp": "2024-10-18T12:05:38.540451+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3892, "Timestamp": "2024-10-18T12:05:38.557266+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 1314, "Timestamp": "2024-10-18T12:06:03.732092+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2974, "Timestamp": "2024-10-18T12:06:03.744691+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 2124, "Timestamp": "2024-10-18T12:06:55.669359+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5619, "Timestamp": "2024-10-18T12:06:55.686682+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 6823, "Timestamp": "2024-10-18T12:07:57.245656+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4259, "Timestamp": "2024-10-18T12:07:57.275326+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 12}}
+{"Username": "malvika", "Log_id": 7997, "Timestamp": "2024-10-18T12:07:57.315411+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2490, "Timestamp": "2024-10-18T12:08:27.392840+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 9728, "Timestamp": "2024-10-18T12:08:27.423763+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 15}}
+{"Username": "malvika", "Log_id": 4885, "Timestamp": "2024-10-18T12:08:27.458420+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1883, "Timestamp": "2024-10-18T12:09:27.117001+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5522, "Timestamp": "2024-10-18T12:09:27.159037+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 19}}
+{"Username": "malvika", "Log_id": 8697, "Timestamp": "2024-10-18T12:10:43.539242+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3014, "Timestamp": "2024-10-18T12:10:43.566765+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 26}}
+{"Username": "malvika", "Log_id": 4095, "Timestamp": "2024-10-18T12:10:43.601231+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7095, "Timestamp": "2024-10-18T12:12:32.003423+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6579, "Timestamp": "2024-10-18T12:12:32.043912+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 35}}
+{"Username": "malvika", "Log_id": 2312, "Timestamp": "2024-10-18T12:12:32.075793+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 9256, "Timestamp": "2024-10-18T12:13:16.697786+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4609, "Timestamp": "2024-10-18T12:13:16.730443+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 39}}
+{"Username": "malvika", "Log_id": 5381, "Timestamp": "2024-10-18T12:13:16.764359+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2320, "Timestamp": "2024-10-18T12:13:39.841018+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6000, "Timestamp": "2024-10-18T12:13:39.865814+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 40}}
+{"Username": "malvika", "Log_id": 6293, "Timestamp": "2024-10-18T12:13:39.895196+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1068, "Timestamp": "2024-10-18T12:15:58.618666+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7219, "Timestamp": "2024-10-18T12:15:58.655554+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 52}}
+{"Username": "malvika", "Log_id": 7410, "Timestamp": "2024-10-18T12:18:35.280082+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4123, "Timestamp": "2024-10-18T12:18:35.321465+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 64}}
+{"Username": "malvika", "Log_id": 5278, "Timestamp": "2024-10-18T12:18:35.538673+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8135, "Timestamp": "2024-10-18T12:19:15.278492+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6530, "Timestamp": "2024-10-18T12:19:15.301747+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 68}}
+{"Username": "malvika", "Log_id": 7345, "Timestamp": "2024-10-18T12:19:15.513039+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1209, "Timestamp": "2024-10-18T12:21:32.722993+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1878, "Timestamp": "2024-10-18T12:21:32.751394+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 79}}
+{"Username": "malvika", "Log_id": 3728, "Timestamp": "2024-10-18T12:21:33.190493+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2498, "Timestamp": "2024-10-18T12:26:57.859010+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5748, "Timestamp": "2024-10-18T12:26:57.903805+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 106}}
+{"Username": "malvika", "Log_id": 1931, "Timestamp": "2024-10-18T12:26:57.905779+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 4614, "Timestamp": "2024-10-18T12:27:21.737674+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3615, "Timestamp": "2024-10-18T12:27:21.767921+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 108}}
+{"Username": "malvika", "Log_id": 7235, "Timestamp": "2024-10-18T12:27:21.770691+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 2979, "Timestamp": "2024-10-18T12:27:40.439716+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3536, "Timestamp": "2024-10-18T12:27:40.478737+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 109}}
+{"Username": "malvika", "Log_id": 2517, "Timestamp": "2024-10-18T12:27:40.481635+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 4123, "Timestamp": "2024-10-18T12:31:04.318739+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8694, "Timestamp": "2024-10-18T12:31:04.351623+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 6720, "Timestamp": "2024-10-18T12:32:48.689925+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 9907, "Timestamp": "2024-10-18T12:32:48.711347+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 4113, "Timestamp": "2024-10-18T12:34:21.135420+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1973, "Timestamp": "2024-10-18T12:34:21.163465+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 2614, "Timestamp": "2024-10-18T12:35:05.852701+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3135, "Timestamp": "2024-10-18T12:35:06.074845+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 147}}
+{"Username": "malvika", "Log_id": 9055, "Timestamp": "2024-10-18T12:35:06.077215+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 4105, "Timestamp": "2024-10-18T12:36:04.568413+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3438, "Timestamp": "2024-10-18T12:36:04.613212+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 1371, "Timestamp": "2024-10-18T12:36:55.623734+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3382, "Timestamp": "2024-10-18T12:36:55.646579+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 5366, "Timestamp": "2024-10-18T12:37:56.737967+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3923, "Timestamp": "2024-10-18T12:37:56.765015+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 7081, "Timestamp": "2024-10-18T12:39:11.952606+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5768, "Timestamp": "2024-10-18T12:39:11.980813+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 6433, "Timestamp": "2024-10-18T12:40:18.641753+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1823, "Timestamp": "2024-10-18T12:40:18.731273+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 3614, "Timestamp": "2024-10-18T12:45:27.140373+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6096, "Timestamp": "2024-10-18T12:45:27.193519+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 7808, "Timestamp": "2024-10-18T12:50:26.031876+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3652, "Timestamp": "2024-10-18T12:50:26.064110+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 6429, "Timestamp": "2024-10-18T12:55:02.842190+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4536, "Timestamp": "2024-10-18T12:55:02.895299+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 243}}
+{"Username": "malvika", "Log_id": 7063, "Timestamp": "2024-10-18T12:55:03.752900+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5431, "Timestamp": "2024-10-18T12:55:35.475878+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2050, "Timestamp": "2024-10-18T12:55:35.506073+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 246}}
+{"Username": "malvika", "Log_id": 7582, "Timestamp": "2024-10-18T12:57:08.689458+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2385, "Timestamp": "2024-10-18T12:57:08.735720+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 253}}
+{"Username": "malvika", "Log_id": 3533, "Timestamp": "2024-10-18T12:57:09.507967+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5672, "Timestamp": "2024-10-18T12:58:37.488473+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2473, "Timestamp": "2024-10-18T12:58:37.553718+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6629, "Timestamp": "2024-10-18T12:58:37.601912+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3486, "Timestamp": "2024-10-18T12:58:37.632389+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 7566, "Timestamp": "2024-10-18T12:58:37.648823+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5351, "Timestamp": "2024-10-18T12:59:14.708026+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3463, "Timestamp": "2024-10-18T12:59:14.740164+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 2}}
+{"Username": "malvika", "Log_id": 9129, "Timestamp": "2024-10-18T12:59:16.773325+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 9293, "Timestamp": "2024-10-18T12:59:16.807141+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 2}}
+{"Username": "malvika", "Log_id": 9507, "Timestamp": "2024-10-18T12:59:16.952027+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8113, "Timestamp": "2024-10-18T12:59:16.970567+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 2}}
+{"Username": "malvika", "Log_id": 2013, "Timestamp": "2024-10-18T12:59:17.121579+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5524, "Timestamp": "2024-10-18T12:59:17.152139+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 2}}
+{"Username": "malvika", "Log_id": 1853, "Timestamp": "2024-10-18T13:03:56.757969+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8724, "Timestamp": "2024-10-18T13:03:56.785089+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 25}}
+{"Username": "malvika", "Log_id": 8621, "Timestamp": "2024-10-18T13:03:56.890994+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8030, "Timestamp": "2024-10-18T13:04:29.965037+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2750, "Timestamp": "2024-10-18T13:04:29.989999+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 28}}
+{"Username": "malvika", "Log_id": 9026, "Timestamp": "2024-10-18T13:04:30.097326+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5427, "Timestamp": "2024-10-18T13:04:59.388094+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7196, "Timestamp": "2024-10-18T13:04:59.432081+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 30}}
+{"Username": "malvika", "Log_id": 2832, "Timestamp": "2024-10-18T13:07:37.563425+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2731, "Timestamp": "2024-10-18T13:07:37.584007+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 43}}
+{"Username": "malvika", "Log_id": 2238, "Timestamp": "2024-10-18T13:09:00.576838+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5945, "Timestamp": "2024-10-18T13:09:00.640733+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 50}}
+{"Username": "malvika", "Log_id": 2645, "Timestamp": "2024-10-18T13:09:44.727171+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2956, "Timestamp": "2024-10-18T13:09:44.803262+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 54}}
+{"Username": "malvika", "Log_id": 9467, "Timestamp": "2024-10-18T13:12:35.676366+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5336, "Timestamp": "2024-10-18T13:12:35.742094+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 68}}
+{"Username": "malvika", "Log_id": 8970, "Timestamp": "2024-10-18T13:12:35.954216+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8894, "Timestamp": "2024-10-18T13:17:05.792272+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5388, "Timestamp": "2024-10-18T13:17:06.031504+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 90}}
+{"Username": "malvika", "Log_id": 1424, "Timestamp": "2024-10-18T13:17:06.873192+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5700, "Timestamp": "2024-10-18T13:19:14.551551+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8351, "Timestamp": "2024-10-18T13:19:14.685543+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8443, "Timestamp": "2024-10-18T13:19:15.171875+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8110, "Timestamp": "2024-10-18T13:19:15.219994+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 1403, "Timestamp": "2024-10-18T13:19:15.220394+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 1850, "Timestamp": "2024-10-18T13:20:04.339836+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7090, "Timestamp": "2024-10-18T13:20:04.370385+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 4}}
+{"Username": "malvika", "Log_id": 3996, "Timestamp": "2024-10-18T13:20:04.370768+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 7807, "Timestamp": "2024-10-18T13:22:22.376751+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4461, "Timestamp": "2024-10-18T13:22:22.410347+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 16}}
+{"Username": "malvika", "Log_id": 1913, "Timestamp": "2024-10-18T13:22:22.505657+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7237, "Timestamp": "2024-10-18T13:22:45.713698+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 9727, "Timestamp": "2024-10-18T13:22:45.755005+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 18}}
+{"Username": "malvika", "Log_id": 8564, "Timestamp": "2024-10-18T13:22:45.837445+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6727, "Timestamp": "2024-10-18T13:23:17.519160+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5283, "Timestamp": "2024-10-18T13:23:17.552871+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 21}}
+{"Username": "malvika", "Log_id": 5035, "Timestamp": "2024-10-18T13:23:32.168969+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3450, "Timestamp": "2024-10-18T13:23:32.202174+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 22}}
+{"Username": "malvika", "Log_id": 1530, "Timestamp": "2024-10-18T13:23:32.370078+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4929, "Timestamp": "2024-10-18T13:24:27.347950+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8471, "Timestamp": "2024-10-18T13:24:27.376356+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 27}}
+{"Username": "malvika", "Log_id": 7567, "Timestamp": "2024-10-18T13:24:27.677221+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2662, "Timestamp": "2024-10-18T13:24:38.325984+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6471, "Timestamp": "2024-10-18T13:24:38.389365+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 28}}
+{"Username": "malvika", "Log_id": 8811, "Timestamp": "2024-10-18T13:24:39.345508+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2132, "Timestamp": "2024-10-18T13:25:33.193901+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1325, "Timestamp": "2024-10-18T13:25:33.220197+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 32}}
+{"Username": "malvika", "Log_id": 3958, "Timestamp": "2024-10-18T13:26:43.074103+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2516, "Timestamp": "2024-10-18T13:26:43.111763+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 38}}
+{"Username": "malvika", "Log_id": 2933, "Timestamp": "2024-10-18T13:26:45.211930+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8808, "Timestamp": "2024-10-18T13:28:08.225052+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5222, "Timestamp": "2024-10-18T13:28:08.303907+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6843, "Timestamp": "2024-10-18T13:28:08.358128+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3820, "Timestamp": "2024-10-18T13:28:08.371565+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 9055, "Timestamp": "2024-10-18T13:28:08.382358+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3141, "Timestamp": "2024-10-18T13:28:41.791073+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4255, "Timestamp": "2024-10-18T13:28:41.808243+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 2}}
+{"Username": "malvika", "Log_id": 1453, "Timestamp": "2024-10-18T13:28:41.808243+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 4188, "Timestamp": "2024-10-18T13:28:47.594077+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3766, "Timestamp": "2024-10-18T13:28:47.614385+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 3}}
+{"Username": "malvika", "Log_id": 9288, "Timestamp": "2024-10-18T13:28:47.616567+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 5495, "Timestamp": "2024-10-18T13:28:48.061743+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1166, "Timestamp": "2024-10-18T13:28:48.087928+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 3}}
+{"Username": "malvika", "Log_id": 9074, "Timestamp": "2024-10-18T13:28:48.089956+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 2582, "Timestamp": "2024-10-18T13:28:48.312381+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2848, "Timestamp": "2024-10-18T13:28:48.328421+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 3}}
+{"Username": "malvika", "Log_id": 6397, "Timestamp": "2024-10-18T13:28:48.331207+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 1880, "Timestamp": "2024-10-18T13:28:48.552198+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2337, "Timestamp": "2024-10-18T13:28:48.569385+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 3}}
+{"Username": "malvika", "Log_id": 2444, "Timestamp": "2024-10-18T13:28:48.569385+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 7029, "Timestamp": "2024-10-18T13:28:48.847355+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1901, "Timestamp": "2024-10-18T13:28:48.867633+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 3}}
+{"Username": "malvika", "Log_id": 3066, "Timestamp": "2024-10-18T13:28:48.867633+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 3543, "Timestamp": "2024-10-18T13:28:49.107044+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3735, "Timestamp": "2024-10-18T13:28:49.128329+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 3}}
+{"Username": "malvika", "Log_id": 8099, "Timestamp": "2024-10-18T13:28:49.130327+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 2482, "Timestamp": "2024-10-18T13:29:33.478387+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4491, "Timestamp": "2024-10-18T13:29:33.504668+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 6}}
+{"Username": "malvika", "Log_id": 7122, "Timestamp": "2024-10-18T13:29:33.507765+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 5280, "Timestamp": "2024-10-18T13:30:26.935070+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8958, "Timestamp": "2024-10-18T13:30:26.962325+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 10}}
+{"Username": "malvika", "Log_id": 8279, "Timestamp": "2024-10-18T13:30:26.962325+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 6132, "Timestamp": "2024-10-18T13:31:59.465962+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4127, "Timestamp": "2024-10-18T13:31:59.502329+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 18}}
+{"Username": "malvika", "Log_id": 5407, "Timestamp": "2024-10-18T13:31:59.508548+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 7604, "Timestamp": "2024-10-18T13:32:31.652940+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3138, "Timestamp": "2024-10-18T13:32:31.694259+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 20}}
+{"Username": "malvika", "Log_id": 8889, "Timestamp": "2024-10-18T13:32:31.697445+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 9296, "Timestamp": "2024-10-18T13:34:16.986611+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4341, "Timestamp": "2024-10-18T13:34:17.021086+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 29}}
+{"Username": "malvika", "Log_id": 5844, "Timestamp": "2024-10-18T13:34:17.023059+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 2218, "Timestamp": "2024-10-18T13:42:29.245529+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4932, "Timestamp": "2024-10-18T13:42:29.334383+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 58}}
+{"Username": "malvika", "Log_id": 8518, "Timestamp": "2024-10-18T13:42:29.348708+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 7155, "Timestamp": "2024-10-18T13:42:32.299542+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7139, "Timestamp": "2024-10-18T13:42:32.350292+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 59}}
+{"Username": "malvika", "Log_id": 9240, "Timestamp": "2024-10-18T13:42:32.357191+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 3713, "Timestamp": "2024-10-18T13:42:32.917900+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6874, "Timestamp": "2024-10-18T13:42:32.972551+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 59}}
+{"Username": "malvika", "Log_id": 6121, "Timestamp": "2024-10-18T13:42:32.974895+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 2068, "Timestamp": "2024-10-18T13:42:33.281684+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 9998, "Timestamp": "2024-10-18T13:42:33.330385+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 59}}
+{"Username": "malvika", "Log_id": 3918, "Timestamp": "2024-10-18T13:42:33.333390+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 6483, "Timestamp": "2024-10-18T13:42:33.542848+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4412, "Timestamp": "2024-10-18T13:42:33.584061+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 59}}
+{"Username": "malvika", "Log_id": 4842, "Timestamp": "2024-10-18T13:42:33.584061+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 3974, "Timestamp": "2024-10-18T13:42:33.791804+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 9912, "Timestamp": "2024-10-18T13:42:33.833446+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 59}}
+{"Username": "malvika", "Log_id": 5893, "Timestamp": "2024-10-18T13:42:33.834364+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 5587, "Timestamp": "2024-10-18T13:42:34.015864+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3918, "Timestamp": "2024-10-18T13:42:34.081164+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 59}}
+{"Username": "malvika", "Log_id": 2967, "Timestamp": "2024-10-18T13:42:34.085258+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 4263, "Timestamp": "2024-10-18T13:42:34.246714+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7059, "Timestamp": "2024-10-18T13:42:34.285892+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 59}}
+{"Username": "malvika", "Log_id": 3696, "Timestamp": "2024-10-18T13:42:34.289605+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 8949, "Timestamp": "2024-10-18T13:42:34.516171+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 9941, "Timestamp": "2024-10-18T13:42:34.570319+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 59}}
+{"Username": "malvika", "Log_id": 5979, "Timestamp": "2024-10-18T13:42:34.572685+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 4498, "Timestamp": "2024-10-18T13:45:31.417990+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6888, "Timestamp": "2024-10-18T13:45:31.497087+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 74}}
+{"Username": "malvika", "Log_id": 1201, "Timestamp": "2024-10-18T13:45:31.499317+00:00", "Values": {"whatfailed": "record could not be added", "reason": "error in request", "iserrorlog": 1, "table": "DimCustomer"}}
+{"Username": "malvika", "Log_id": 2690, "Timestamp": "2024-10-18T13:45:56.631223+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6709, "Timestamp": "2024-10-18T13:45:56.693075+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 75}}
+{"Username": "malvika", "Log_id": 5990, "Timestamp": "2024-10-18T13:45:57.053847+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3236, "Timestamp": "2024-10-18T13:46:28.211403+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 2307, "Timestamp": "2024-10-18T13:46:28.275920+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 78}}
+{"Username": "malvika", "Log_id": 3244, "Timestamp": "2024-10-18T13:46:28.507345+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7631, "Timestamp": "2024-10-18T13:48:27.717551+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4878, "Timestamp": "2024-10-18T13:48:27.806889+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 88}}
+{"Username": "malvika", "Log_id": 1605, "Timestamp": "2024-10-18T13:48:28.310706+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5991, "Timestamp": "2024-10-18T14:17:52.549790+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 9642, "Timestamp": "2024-10-18T14:17:52.839375+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 232}}
+{"Username": "malvika", "Log_id": 1681, "Timestamp": "2024-10-18T14:17:53.706822+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6324, "Timestamp": "2024-10-18T14:18:31.564020+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5430, "Timestamp": "2024-10-18T14:18:31.778051+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 235}}
+{"Username": "malvika", "Log_id": 6848, "Timestamp": "2024-10-18T14:18:32.142261+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4540, "Timestamp": "2024-10-18T14:18:53.093920+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1435, "Timestamp": "2024-10-18T14:18:53.348229+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 237}}
+{"Username": "malvika", "Log_id": 3494, "Timestamp": "2024-10-18T14:18:53.679393+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6676, "Timestamp": "2024-10-18T14:21:49.888564+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6871, "Timestamp": "2024-10-18T14:21:49.973620+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5631, "Timestamp": "2024-10-18T14:21:50.048137+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1836, "Timestamp": "2024-10-18T14:21:50.060303+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 0}}
+{"Username": "malvika", "Log_id": 5316, "Timestamp": "2024-10-18T14:21:50.081574+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 9025, "Timestamp": "2024-10-18T14:22:06.831294+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 5002, "Timestamp": "2024-10-18T14:22:06.845548+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 1}}
+{"Username": "malvika", "Log_id": 4341, "Timestamp": "2024-10-18T14:22:06.891849+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 6041, "Timestamp": "2024-10-18T14:22:19.714027+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 1161, "Timestamp": "2024-10-18T14:22:19.751169+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 2}}
+{"Username": "malvika", "Log_id": 9971, "Timestamp": "2024-10-18T14:22:19.777166+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3049, "Timestamp": "2024-10-18T14:22:31.713643+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 3219, "Timestamp": "2024-10-18T14:22:31.749099+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 3}}
+{"Username": "malvika", "Log_id": 3908, "Timestamp": "2024-10-18T14:22:31.830747+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7497, "Timestamp": "2024-10-18T14:22:58.038237+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7904, "Timestamp": "2024-10-18T14:22:58.066732+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 6}}
+{"Username": "malvika", "Log_id": 5560, "Timestamp": "2024-10-18T14:23:54.970458+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 8876, "Timestamp": "2024-10-18T14:23:54.987184+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 10}}
+{"Username": "malvika", "Log_id": 5673, "Timestamp": "2024-10-18T14:25:01.960029+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 4784, "Timestamp": "2024-10-18T14:25:01.976017+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 16}}
+{"Username": "malvika", "Log_id": 7948, "Timestamp": "2024-10-21T07:05:17.197236+00:00", "Values": {"iserrorlog": 0, "table": "Dim_Customer", "scd_type": "Type 2"}}
+{"Username": "malvika", "Log_id": 7888, "Timestamp": "2024-10-21T07:05:17.278348+00:00", "Values": {"iserrorlog": 0, "table": "DimCustomer", "count": 355}}

@@ -1,28 +1,18 @@
 import logging
-import threading
-import asyncio
+from threading import Thread
 from fastapi import FastAPI, Depends, HTTPException,Request
 from sqlalchemy.orm import Session
 from pydantic import BaseModel
-from .database import get_db
-from .crud import create_record, update_record
-from .producer import produce_data
-from .logging import log_fail
+from database import get_db
+from crud import create_record, update_record
+from producer import produce_data
+from logging_anurag import log_fail
 import xmltodict
 import json
+import uvicorn
 
 
 app = FastAPI()
-
-# Start data generation on startup
-@app.on_event("startup")
-async def startup_event():
-    print("Starting up...")
-    # Start the data generation in a separate thread
-    loop = asyncio.get_event_loop()
-    loop.create_task(produce_data())
-    print("Data generation started.")
-    print("Startup complete.")
 
 # Utility function to convert XML to JSON
 def convert_xml_to_json(xml_data: str) -> dict:
@@ -39,7 +29,7 @@ class RecordRequest(BaseModel):
 
 # API for creating records
 @app.post("/create_record/")
-async def create_record_endpoint(request: Request, db: Session = Depends(get_db)):
+async def create_record_endpoint(request: Request, db: Session=Depends(get_db)):
    try:
       print("ENter try")
       request_data = await request.body()
@@ -66,9 +56,20 @@ async def create_record_endpoint(request: Request, db: Session = Depends(get_db)
 
 # API for updating records
 @app.post("/update_record/")
-def update_record_endpoint(request: RecordRequest, db: Session = Depends(get_db)):
+def update_record_endpoint(request: RecordRequest, db: Session=Depends(get_db)):
    try:
       return update_record(request.tablename, request.record, db)
    except Exception as e:
       log_fail("record could not be added","error in request",request.tablename)
       raise HTTPException(status_code=500, detail=str(e))
+
+def run_server():
+   uvicorn.run(app=app)
+   
+if __name__=="__main__":
+   t1=Thread(target=run_server)   
+   t2=Thread(target=produce_data)
+   t1.start()
+   t2.start()
+   t1.join()
+   t2.join()
