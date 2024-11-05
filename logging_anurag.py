@@ -25,14 +25,15 @@ def log_incrementalloading(tablename, count):
         }
     })
 
-def log_update(tablename, scd_type):
+def log_update(tablename, scd_type,message):
     logger.info('Update log', extra={
         'username': 'malvika',
         'log_id': random.randint(1000, 9999),
         'values': {
             'iserrorlog': 0,
             'table': tablename,
-            'scd_type': scd_type
+            'scd_type': scd_type,
+            'message':message
         }
     })
 

@@ -4,8 +4,6 @@ from sqlalchemy import text
 from sqlalchemy.orm import Session
 from logging_anurag import log_fail, log_update
 
-
-
 def create_target_table_if_not_exists(target_table_name: str, target_columns: list, scd_type: str, db: Session):
     # Fetch the primary key and surrogate key columns from SCD_Entities
     result = db.execute(text("""
@@ -42,12 +40,11 @@ def create_target_table_if_not_exists(target_table_name: str, target_columns: li
         )
     END
     """
-    log_update(target_table_name,scd_type)
+    log_update(target_table_name,scd_type,"Created target table")
     
     db.execute(text(create_table_query))
     db.commit()
     print(f"Target table '{target_table_name}' created successfully.")
-
 
 def initial_load_from_source_to_target(source_table: str, target_table: str, scd_type: str, db: Session):
     # Fetch the relevant columns from Table_Columns_Metadata
@@ -82,7 +79,6 @@ def initial_load_from_source_to_target(source_table: str, target_table: str, scd
     """)).fetchall()
     print("source_records")
     #    print("Source Records:", source_records)
-    log_update(source_table,scd_type)
 
     for record in source_records:
         record_dict = dict(record._mapping)
@@ -116,5 +112,23 @@ def initial_load_from_source_to_target(source_table: str, target_table: str, scd
             log_fail("query execution failed",'Column mismatch',target_table)
             print(f"Error executing query: {e}")
     db.commit()
-    log_update(target_table,scd_type)
+    log_update(source_table,scd_type,"Initial load at target table")
+
+    # Validate row count
+    source_row_count = db.execute(text(f"SELECT COUNT(*) FROM {source_table}")).scalar()
+    target_row_count = db.execute(text(f"SELECT COUNT(*) FROM {target_table}")).scalar()
+    print("source_row_count",source_row_count)
+    print("target_row_count",target_row_count)
+
+    if source_row_count == target_row_count:
+        log_update(target_table,scd_type,"Initial load rows count validated")
+        print(f"Validation successful: {source_row_count} rows in both source and target tables.")
+    else:
+        error_message = f"Validation failed: {source_row_count} rows in source table but {target_row_count} rows in target table."
+        log_fail("initial load validation failed", error_message, target_table)
+        print(error_message)
+        raise HTTPException(status_code=500, detail=error_message)
+
     print(f"Initial load from {source_table} to {target_table} completed successfully.")
+
+

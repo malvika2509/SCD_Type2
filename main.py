@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 from pydantic import BaseModel
 from database import get_db
 from crud import create_record, update_record
+from helper import add_new_column_if_needed
 from producer import produce_data
 from logging_anurag import log_fail
 import xmltodict
@@ -49,19 +50,29 @@ async def create_record_endpoint(request: Request, db: Session=Depends(get_db)):
       logging.error(f"JSON decode error: {str(e)}")
       raise HTTPException(status_code=400, detail=f"JSON decode error: {str(e)}")
    except Exception as e:
-      log_fail("record could not be added", "error in request", "unknown")
+      log_fail("record could not be added", "error in API request", "unknown")
       logging.error(f"Error processing request: {str(e)}")
       raise HTTPException(status_code=500, detail=str(e))
 
 
 # API for updating records
 @app.post("/update_record/")
-def update_record_endpoint(request: RecordRequest, db: Session=Depends(get_db)):
+def update_record_endpoint(request: RecordRequest, db: Session = Depends(get_db)):
    try:
+      print("ADD NEW COLUMN")
+      # Check and add new columns if needed
+      add_new_column_if_needed(db, request.tablename)
+      
       return update_record(request.tablename, request.record, db)
+   except HTTPException as http_exc:
+      log_fail("record could not be updated", f"HTTP error: {http_exc.detail}", request.tablename)
+      raise http_exc
    except Exception as e:
-      log_fail("record could not be added","error in request",request.tablename)
-      raise HTTPException(status_code=500, detail=str(e))
+      error_message = f"Unexpected error: {str(e)}"
+      log_fail("record could not be updated", error_message, request.tablename)
+      logging.error(error_message)
+      raise HTTPException(status_code=500, detail=error_message)
+
 
 def run_server():
    uvicorn.run(app=app)

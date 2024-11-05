@@ -186,7 +186,7 @@ def update_record(tablename: str, new_record: dict, db: Session):
                 """), {'table_name': target_table_name, 'last_load_time': datetime.now(),'message':"request received,change occurred in existing record"})
                 
                 db.commit()
-                log_update(tablename,scd_type)
+                log_update(tablename,scd_type,"updated target table and Load Tracking tble")
                 return {"message": "Record updated successfully (SCD Type 1)"}
             else:
                 return {"message": "No changes detected (SCD Type 1)"}
@@ -207,7 +207,7 @@ def update_record(tablename: str, new_record: dict, db: Session):
                 """), {'table_name': target_table_name, 'last_load_time': datetime.now()+timedelta(seconds=1),'message':"new record added"})
             
             db.commit()
-            log_update(tablename,scd_type)
+            log_update(tablename,scd_type,"New Row inserted (Type 1)")
             return {"message": "Record created successfully (SCD Type 1)"}
     elif scd_type == 'Type 2':
         # SCD Type 2: Handle versioning by closing old records and inserting a new one
@@ -252,7 +252,7 @@ def update_record(tablename: str, new_record: dict, db: Session):
                 """), {'table_name': target_table_name, 'last_load_time': datetime.now(),'message':"inserted new changes(SCD 2)"})
                 
                 db.commit()
-                log_update(tablename,scd_type)
+                log_update(tablename,scd_type,"New row inserted and updated old(Type 2)")
                 return {"message": "Record updated successfully (SCD Type 2)"}
             else:
                 
@@ -278,7 +278,7 @@ def update_record(tablename: str, new_record: dict, db: Session):
                     """), {'table_name': target_table_name, 'last_load_time': datetime.now(),'message':"new record added"})
             
             db.commit()
-            log_update(tablename,scd_type)
+            log_update(tablename,scd_type,"New record inserted(Type 2)")
             return {"message": "Record created successfully (SCD Type 2)"}
     
 

@@ -3,6 +3,7 @@ from fastapi import Depends, HTTPException
 from sqlalchemy import text
 from sqlalchemy.orm import Session
 from database import get_db
+from logging_anurag import log_update
 
 # Helper Functions
 def fetch_metadata_columns(tablename: str, db: Session ):
@@ -51,3 +52,50 @@ def fetch_existing_record(target_table_name: str, primary_key_column: str, prima
     return db.execute(text(f"""
         SELECT TOP 1 * FROM {target_table_name} WHERE {primary_key_column} = :{primary_key_column} ORDER BY UpdatedOn DESC
     """), {primary_key_column: primary_key_value}).fetchone()
+    
+def add_new_column_if_needed(db: Session, source_table_name: str):
+    print("ENTERED")
+    # Fetch the target table name from the metadata
+    target_table_name_result = db.execute(text("""
+        SELECT Target_Table_Name
+        FROM SCD_Entities
+        WHERE Source_Table_Name = :source_table_name
+    """), {'source_table_name': source_table_name}).fetchone()
+    print("ATRGET TABLE NAME",target_table_name_result)
+
+    if not target_table_name_result:
+        raise HTTPException(status_code=404, detail=f"Target table name not found for source table '{source_table_name}'")
+
+    target_table_name = target_table_name_result[0]
+    print("NAME",target_table_name)
+
+    # Fetch columns where Is_Target_Column has been changed to 1
+    new_columns = db.execute(text("""
+        SELECT Column_Name, Data_Type
+        FROM Table_Columns_Metadata
+        WHERE Is_Target_Column = 1 AND Updated_On > Created_On AND Table_Name = :source_table_name
+    """), {'source_table_name': source_table_name}).fetchall()
+    print("NEW COLUMNS",new_columns)
+
+    for column in new_columns:
+        column_name, data_type = column
+        print("COLUMN",column)
+        # Check if the column already exists in the target table
+        existing_columns = db.execute(text(f"""
+            SELECT COLUMN_NAME
+            FROM INFORMATION_SCHEMA.COLUMNS
+            WHERE TABLE_NAME = :target_table_name AND COLUMN_NAME = :column_name
+        """), {'target_table_name': target_table_name, 'column_name': column_name}).fetchall()
+
+        print("EXISTING COLUMN-------", existing_columns)
+
+        if not existing_columns:
+            # Add the new column to the target table
+            alter_table_query = f"""
+            ALTER TABLE {target_table_name}
+            ADD {column_name} {data_type} NULL
+            """
+            log_update(target_table_name,"Type 2","dynamic column added")
+            db.execute(text(alter_table_query))
+            db.commit()
+            print(f"Column '{column_name}' added to table '{target_table_name}' successfully.")
