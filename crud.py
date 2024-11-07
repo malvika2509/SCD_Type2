@@ -9,22 +9,46 @@ from logger import logger
 from logging_anurag import log_fail, log_incrementalloading, log_update, log_overwrite
 
 def create_record(tablename: str, record: dict, db: Session):
-   # Fetch the relevant columns from the source table's metadata
-   source_columns = db.execute(text(f"""
-       SELECT COLUMN_NAME, COLUMNPROPERTY(OBJECT_ID(TABLE_NAME), COLUMN_NAME, 'IsIdentity') AS IsIdentity
-       FROM INFORMATION_SCHEMA.COLUMNS
-       WHERE TABLE_NAME = :table_name
-   """), {'table_name': tablename}).fetchall()
-   # Filter out identity columns
-   non_identity_columns = [row[0] for row in source_columns if row[1] != 1]
-   columns = ', '.join(non_identity_columns)
-   values = ', '.join([f':{col}' for col in non_identity_columns])
-   query = text(f"""INSERT INTO {tablename} ({columns}) VALUES ({values})""")
-   # Add timestamps
-   record['UpdatedOn'] = datetime.now()
-   db.execute(query, record)
-   db.commit()
-   return {"message": "Record created successfully"}
+    # Fetch the relevant columns from the source table's metadata
+    source_columns = db.execute(text(f"""
+        SELECT COLUMN_NAME, COLUMNPROPERTY(OBJECT_ID(TABLE_NAME), COLUMN_NAME, 'IsIdentity') AS IsIdentity
+        FROM INFORMATION_SCHEMA.COLUMNS
+        WHERE TABLE_NAME = :table_name
+    """), {'table_name': tablename}).fetchall()
+
+    # Filter out identity columns
+    non_identity_columns = [row[0] for row in source_columns if row[1] != 1]
+    
+    # Get the business key column dynamically (you can add a business key column mapping here as per your table structure)
+    business_key_column = record.get("CustomerID") or record.get("ProductID") or record.get("RegionID")  
+    
+    if not business_key_column:
+        return {"error": "Business key not found in the record"}
+    
+    # Check if the record already exists using the business key
+    existing_record = db.execute(text(f"""
+        SELECT 1
+        FROM {tablename}
+        WHERE {list(record.keys())[0]} = :business_key_column
+    """), {'business_key_column': business_key_column}).fetchone()
+
+    if existing_record:
+        return {"message": f"Record with {list(record.keys())[0]} {business_key_column} already exists."}
+
+    # Construct the insert query
+    columns = ', '.join(non_identity_columns)
+    values = ', '.join([f':{col}' for col in non_identity_columns])
+
+    query = text(f"""INSERT INTO {tablename} ({columns}) VALUES ({values})""")
+    
+    # Add timestamps
+    record['UpdatedOn'] = datetime.now()
+    
+    # Execute the query to insert the record
+    db.execute(query, record)
+    db.commit()
+
+    return {"message": "Record created successfully"}
 
 
 def update_record(tablename: str, new_record: dict, db: Session):
@@ -56,8 +80,8 @@ def update_record(tablename: str, new_record: dict, db: Session):
     # Check and create target table if necessary
     create_target_table_if_not_exists(target_table_name, target_columns, scd_type, db)
 
-    print("target_table_namehduwefw",target_table_name)
-    print("target_table_rowfjgrjf",target_table_row)
+    print("target_table_name",target_table_name)
+    print("target_table_row",target_table_row)
     
     # If Overwrite_Flag is 'Y', truncate the target table and reload from the source table
     if overwrite_flag == 'Y':
@@ -105,7 +129,7 @@ def update_record(tablename: str, new_record: dict, db: Session):
     print("new_records_count",new_records_count)
     
     log_incrementalloading(tablename,new_records_count)
-    print("new records")
+    print("Incremental loading done")
         
     # Insert new records into the target table
     for record in new_records:

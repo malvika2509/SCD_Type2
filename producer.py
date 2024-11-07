@@ -60,4 +60,4 @@ def produce_data():
             insert_data(session, customer_data, 'customer_data')
             insert_data(session, product_data, 'product_data')
             insert_data(session, region_data, 'region_data')
-        sleep(120)  # Wait 120 seconds before producing new data
+        sleep(30)  # Wait 10 seconds before producing new data

@@ -54,20 +54,20 @@ def fetch_existing_record(target_table_name: str, primary_key_column: str, prima
     """), {primary_key_column: primary_key_value}).fetchone()
     
 def add_new_column_if_needed(db: Session, source_table_name: str):
-    print("ENTERED")
+    print("CHECKIN FOR NEW COLUMN")
     # Fetch the target table name from the metadata
     target_table_name_result = db.execute(text("""
         SELECT Target_Table_Name
         FROM SCD_Entities
         WHERE Source_Table_Name = :source_table_name
     """), {'source_table_name': source_table_name}).fetchone()
-    print("ATRGET TABLE NAME",target_table_name_result)
+    # print("TARGET TABLE NAME-new column function",target_table_name_result)
 
     if not target_table_name_result:
         raise HTTPException(status_code=404, detail=f"Target table name not found for source table '{source_table_name}'")
 
     target_table_name = target_table_name_result[0]
-    print("NAME",target_table_name)
+    print("TARGET TABLE NAME-new column function",target_table_name)
 
     # Fetch columns where Is_Target_Column has been changed to 1
     new_columns = db.execute(text("""
@@ -75,11 +75,11 @@ def add_new_column_if_needed(db: Session, source_table_name: str):
         FROM Table_Columns_Metadata
         WHERE Is_Target_Column = 1 AND Updated_On > Created_On AND Table_Name = :source_table_name
     """), {'source_table_name': source_table_name}).fetchall()
-    print("NEW COLUMNS",new_columns)
+    print("NEW COLUMNS--new column function",new_columns)
 
     for column in new_columns:
         column_name, data_type = column
-        print("COLUMN",column)
+        print("NEW COLUMN-new column function",column)
         # Check if the column already exists in the target table
         existing_columns = db.execute(text(f"""
             SELECT COLUMN_NAME

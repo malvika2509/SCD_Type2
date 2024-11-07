@@ -35,7 +35,7 @@ async def create_record_endpoint(request: Request, db: Session=Depends(get_db)):
       print("ENter try")
       request_data = await request.body()
       print(f"Received request data: {request_data}")
-      print("dckwufhwa",request.headers.get('Content-Type'))
+      print("content-type",request.headers.get('Content-Type'))
       if request.headers.get('Content-Type') == 'application/xml':
          request_data = convert_xml_to_json(request_data.decode('utf-8'))
          request_data=request_data.get("RecordRequest")

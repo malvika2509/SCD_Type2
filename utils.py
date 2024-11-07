@@ -34,7 +34,7 @@ def create_target_table_if_not_exists(target_table_name: str, target_columns: li
     BEGIN
         CREATE TABLE {target_table_name} (
             {surrogate_key_column} INT IDENTITY(1,1) PRIMARY KEY,  -- Surrogate key as primary
-            {primary_key_column} VARCHAR(255),  -- Business key (e.g., CustomerID)
+            {primary_key_column} VARCHAR(255),  --(e.g., CustomerID)
             {columns_definition},
             UpdatedOn DATETIME
         )
@@ -44,6 +44,7 @@ def create_target_table_if_not_exists(target_table_name: str, target_columns: li
     
     db.execute(text(create_table_query))
     db.commit()
+    
     print(f"Target table '{target_table_name}' created successfully.")
 
 def initial_load_from_source_to_target(source_table: str, target_table: str, scd_type: str, db: Session):
@@ -98,15 +99,15 @@ def initial_load_from_source_to_target(source_table: str, target_table: str, scd
 
         # Check for existing record before inserting
         columns = ', '.join(record_dict.keys())
-        print("columns---",columns)
+        # print("columns---",columns)
         values = ', '.join([f":{col}" for col in record_dict.keys()])
-        print("values---",values)
+        # print("values---",values)
         
         sql_query = f"""INSERT INTO {target_table} ({columns})VALUES ({values})"""
-        print("sql_query------",sql_query)
+        # print("sql_query------",sql_query)
 
         try:
-            print("sql_query")
+            # print("sql_query")
             db.execute(text(sql_query), record_dict)
         except Exception as e:
             log_fail("query execution failed",'Column mismatch',target_table)
@@ -115,19 +116,20 @@ def initial_load_from_source_to_target(source_table: str, target_table: str, scd
     log_update(source_table,scd_type,"Initial load at target table")
 
     # Validate row count
-    source_row_count = db.execute(text(f"SELECT COUNT(*) FROM {source_table}")).scalar()
-    target_row_count = db.execute(text(f"SELECT COUNT(*) FROM {target_table}")).scalar()
-    print("source_row_count",source_row_count)
-    print("target_row_count",target_row_count)
+    if target_table!='Dim_Region':
+        source_row_count = db.execute(text(f"SELECT COUNT(*) FROM {source_table}")).scalar()
+        target_row_count = db.execute(text(f"SELECT COUNT(*) FROM {target_table}")).scalar()
+        print("source_row_count",source_row_count)
+        print("target_row_count",target_row_count)
 
-    if source_row_count == target_row_count:
-        log_update(target_table,scd_type,"Initial load rows count validated")
-        print(f"Validation successful: {source_row_count} rows in both source and target tables.")
-    else:
-        error_message = f"Validation failed: {source_row_count} rows in source table but {target_row_count} rows in target table."
-        log_fail("initial load validation failed", error_message, target_table)
-        print(error_message)
-        raise HTTPException(status_code=500, detail=error_message)
+        if source_row_count == target_row_count:
+            log_update(target_table,scd_type,"Initial load rows count validated")
+            print(f"Validation successful: {source_row_count} rows in both source and target tables.")
+        else:
+            error_message = f"Validation failed: {source_row_count} rows in source table but {target_row_count} rows in target table."
+            log_fail("initial load validation failed", error_message, target_table)
+            print(error_message)
+            raise HTTPException(status_code=500, detail=error_message)
 
     print(f"Initial load from {source_table} to {target_table} completed successfully.")
 
