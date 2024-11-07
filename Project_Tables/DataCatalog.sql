@@ -5,7 +5,7 @@ CREATE TABLE SCD_Entities (
     Entity_Name VARCHAR(50),
     SCD_Type VARCHAR(10),
     Source_Table_Name VARCHAR(50),
-    Source_Primary_Key_Columns VARCHAR(100),
+    Source_Key_Column VARCHAR(100),
     Target_Table_Name VARCHAR(50),
     Target_Surrogate_Key_Column VARCHAR(50),
     Target_Primary_Key_Columns VARCHAR(100),
@@ -20,7 +20,7 @@ INSERT INTO SCD_Entities (
     Entity_Name,
     SCD_Type,
     Source_Table_Name,
-    Source_Primary_Key_Columns,
+    Source_Key_Column,
     Target_Table_Name,
     Target_Surrogate_Key_Column,
     Target_Primary_Key_Columns,
@@ -72,6 +72,8 @@ VALUES
 		'UpdatedOn',
 		'N'
     );
+
+truncate table SCD_Entities
 
 CREATE TABLE Table_Columns_Metadata (
     Column_ID INT IDENTITY(1,1) PRIMARY KEY,
@@ -144,11 +146,11 @@ CREATE TABLE LoadTracking (
 ------------------------------------------------------------------------------------------------------------
 
 -- METADATA TABLES
-
+SELECT * FROM SCD_Entities
 SELECT * FROM Table_Columns_Metadata
 --change postal code as relevant column
 --UPDATE Table_Columns_Metadata SET Is_Target_Column=1,Updated_On=GETDATE()  WHERE Column_ID=32
-SELECT * FROM SCD_Entities;
+	
 SELECT * FROM LoadTracking
 
 -- SCD Type 2  Target table

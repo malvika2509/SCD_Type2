@@ -14,7 +14,7 @@ def fetch_metadata_columns(tablename: str, db: Session ):
 
 def fetch_entity_info(tablename: str, db: Session ):
     return db.execute(text("""
-        SELECT Source_Primary_Key_Columns, Overwrite_Flag FROM SCD_Entities
+        SELECT Source_Key_Column, Overwrite_Flag FROM SCD_Entities
         WHERE Source_Table_Name = :tablename
     """), {'tablename': tablename}).fetchone()
 
