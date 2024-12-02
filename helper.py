@@ -1,8 +1,7 @@
 from datetime import datetime, timedelta
-from fastapi import Depends, HTTPException
+from fastapi import HTTPException
 from sqlalchemy import text
 from sqlalchemy.orm import Session
-from database import get_db
 from logging_anurag import log_update
 
 # Helper Functions
